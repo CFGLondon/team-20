@@ -3,8 +3,6 @@
   Name (optional):<br>
   <input type="text" name="Name">
   <br>
-  <input type="text" name="Lastname">
-  <br>
   
 Location:<br>
   Latitude:<br>
@@ -14,6 +12,7 @@ Location:<br>
   <input type="text" name="Latitude">
   <br>
   
+Gender:<br>
  <form>
   <input type="radio" name="sex" value="Male" checked>Male
   <br>
@@ -21,6 +20,7 @@ Location:<br>
   <br>
   <input type="radio" name="sex" value="Neither/Other">Neither/Other
 </form> 
+<br>
 
 Disability:<br>
   <input type="text" name="Disability">
@@ -32,22 +32,28 @@ Statement of problem/issue faced:<br>
 
 Problem Classification:<br><!--Might want to modify to be more specific to the ADD infographic - 4, 8, 10, 11, 17-->
   <select name="UN Goals">
-    <option value="Poverty">Poverty</option>
-    <option value="Hunger">Hunger</option>
-    <option value="Health & Well-being">Healthcare</option>
-    <option value="Education">Education</option>
-    <option value="Gender Equality">Gender</option>
-    <option value="Clean water and Sanitation">Water</option>
-    <option value="Affordable & Clean energy">Energy</option>
-    <option value="Work & Economic growth">Work</option>
-    <option value="Industry & Infrastructure">Infrastructure</option>
-    <option value="Inequalities">Inequalities</option><!--This looks too vague. Mapped from 'Reduced Inequalities'--> 
-    <option value="Sustainable cities/communities">Sustainability</option>
-    <option value="Responsible Consumption & Production">Responsibility</option>
+    <option value="1 - Poverty">Poverty</option>
+    <option value="2 - Hunger">Hunger</option>
+    <option value="3 - Health & Well-being">Healthcare</option>
+    <option value="4 - Education">Education</option>
+    <option value="5 - Gender Equality">Gender</option>
+    <option value="6 - Clean water and Sanitation">Water</option>
+    <option value="7 - Affordable & Clean energy">Energy</option>
+    <option value="8 - Work & Economic growth">Work</option>
+    <option value="9 - Industry & Infrastructure">Infrastructure</option>
+    <option value="10 - Inequalities">Inequalities</option><!--This looks too vague. Mapped from 'Reduced Inequalities'--> 
+    <option value="11 - Sustainable cities/communities">Sustainability</option>
+    <option value="12 - Responsible Consumption & Production">Responsibility</option><!--irrelevant to disability..?-->
 </select>
 <br>
 
 Resolution of problem/aid dispatched:<br>
+ <form>
+  <input type="radio" name="aid" value="Yes" checked>Yes
+  <br>
+  <input type="radio" name="aid" value="No">No
+  <br>
+  <input type="radio" name="aid" value="No">No
  <br>
 
  
