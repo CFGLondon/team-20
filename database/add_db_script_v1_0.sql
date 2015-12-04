@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema add_db
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema add_db
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `add_db` DEFAULT CHARACTER SET utf8 ;
+USE `add_db` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Language`
+-- Table `add_db`.`Language`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Language` (
+CREATE TABLE IF NOT EXISTS `add_db`.`Language` (
   `id_language` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   `dialect` VARCHAR(45) NULL,
@@ -29,9 +29,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`ProblemCategories`
+-- Table `add_db`.`ProblemCategories`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`ProblemCategories` (
+CREATE TABLE IF NOT EXISTS `add_db`.`ProblemCategories` (
   `problem_categories` VARCHAR(45) NOT NULL,
   `id_problem_category` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_problem_category`))
@@ -39,9 +39,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`RawSMSData`
+-- Table `add_db`.`RawSMSData`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`RawSMSData` (
+CREATE TABLE IF NOT EXISTS `add_db`.`RawSMSData` (
   `idRawSMSData` INT NOT NULL,
   `msg_contents` MEDIUMTEXT NOT NULL,
   `phone_number` VARCHAR(45) NOT NULL,
@@ -50,9 +50,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Report`
+-- Table `add_db`.`Report`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Report` (
+CREATE TABLE IF NOT EXISTS `add_db`.`Report` (
   `idmain` INT NOT NULL AUTO_INCREMENT,
   `lat` FLOAT(10,6) NOT NULL,
   `long` FLOAT(10,6) NOT NULL,
@@ -75,17 +75,17 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Report` (
   INDEX `fk_Report_RawSMSData1_idx` (`sms_id` ASC),
   CONSTRAINT `fk_main_1`
     FOREIGN KEY (`id_language`)
-    REFERENCES `mydb`.`Language` (`id_language`)
+    REFERENCES `add_db`.`Language` (`id_language`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_report_problem_categories1`
     FOREIGN KEY (`problem_category`)
-    REFERENCES `mydb`.`ProblemCategories` (`id_problem_category`)
+    REFERENCES `add_db`.`ProblemCategories` (`id_problem_category`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Report_RawSMSData1`
     FOREIGN KEY (`sms_id`)
-    REFERENCES `mydb`.`RawSMSData` (`idRawSMSData`)
+    REFERENCES `add_db`.`RawSMSData` (`idRawSMSData`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
