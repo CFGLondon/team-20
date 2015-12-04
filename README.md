@@ -2,22 +2,22 @@ Team 20's code for the 24 hour hackathon at #code4good in London. Developing an 
 
 #Challenges
 ##Data Acquisition
-*SMS 
-*Local coordinator form
+* SMS 
+* Local coordinator form
 
--Nicholas
--Sathya
+- Nicholas
+- Sathya
 ##Data Storage
-*Tables
+* Tables
 
--Anthony
--Alastair
+- Anthony
+- Alastair
 
 ##Data Displaying
-*UN Goals
-*Local Coordinator
-*Maps
-*ADD head org
+* UN Goals
+* Local Coordinator
+* Maps
+* ADD head org
 
--Yichen
--Tom
+- Yichen
+- Tom
