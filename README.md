@@ -19,7 +19,7 @@ Team Members:
 
 Team Members:
 
-- Anthony
+- Anthoney
 - Alastair
 
 ##Data Displaying
