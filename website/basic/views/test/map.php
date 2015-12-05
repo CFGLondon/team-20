@@ -49,11 +49,11 @@ foreach($reports as $report) {
     );
      
     // Add marker to the map
-    ${$report->idmain}->addOverlay($marker);
+    $map->addOverlay(${$report->idmain});
 }
 
 // Display the map -finally :)
-echo ${$report->idmain}->display();
+echo $map->display();
 
 ?>
 <div id = "options">
