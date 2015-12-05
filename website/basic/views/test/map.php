@@ -27,8 +27,6 @@ $map = new Map([
 $map->containerOptions = [
     "id" => "main_map",
     "style" => "width:100%; height:500px;padding:20px;"
-}
-</style>
 ];
  
 foreach($reports as $report) {
