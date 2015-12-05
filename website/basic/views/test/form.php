@@ -89,7 +89,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
         <div id="form_get_lat_long">
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-            <div id="mapCanvas"></div>
+            <div id="map"></div>
             <?= $form->field($model, 'lat') ?>
             <?= $form->field($model, 'long') ?>
         </div>
