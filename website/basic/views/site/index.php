@@ -9,7 +9,7 @@ $this->title = 'Index';
     <div class="jumbotron">
         <h1>ADD International Access Tracker</h1>
 
-        <p class="lead">Code for Good 2015 Demo</p>
+        <p class="lead">Code for Good London 2015 Demo</p>
 
     </div>
 
