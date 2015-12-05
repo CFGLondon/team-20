@@ -13,11 +13,12 @@
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-	$sql = "INSERT INTO Report (category)
-	VALUES ('$parsed(0)')";
+	$sql = "INSERT INTO Report(`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`) 
+	VALUES('$parsed[1]','$parsed[0]','$parsed[2]',1.0,1.0,0,NOW(),1,0,NOW(),1);";
 	$conn->query($sql);
 	$conn->close();
 ?>
 <Response>
     <Message>Thank you for contacting us!</Message>
 </Response>
+INSERT INTO Report(`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`) VALUES(1.0,1.0,0,NOW(),1,0,NOW(),1);

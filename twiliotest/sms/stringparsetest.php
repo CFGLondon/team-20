@@ -1,4 +1,11 @@
 <?php
+    include 'stringparse.php';
+
+
+
+?>
+
+	
 	$servername = "ec2-54-170-43-20.eu-west-1.compute.amazonaws.com";
 	$username = "root";
 	$password = "code4good";
@@ -11,11 +18,5 @@
 	$conn->query($sql);
 	$conn->close();
 
-
-
-?>
-
-	
-	
 	
 	
