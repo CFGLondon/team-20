@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'age') ?>
         <?= $form->field($model, 'problem_category') ?>
         <?= $form->field($model, 'sms_id') ?>
-        <?= $form->field($model, 'disability_category') ?>
+        <?= $form->field($model, 'disability_category')->dropDownList($disabilities) ?>
         <?= $form->field($model, 'location_prose') ?>
         <?= $form->field($model, 'problem_prose') ?>
         <?= $form->field($model, 'editor_comments') ?>

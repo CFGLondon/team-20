@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Report;
 use app\models\Language;
+use app\models\DisabilityCategory;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -152,9 +153,16 @@ class TestController extends Controller
         $language_arr[$language->id_language] = $language->name." (".$language->dialect.")";
        }
 
+       $disabilities = DisabilityCategory::find()->all();
+       $disability_arr = [];
+       foreach($disabilities as $disability) {
+         $disability_arr[$disability->id_disability_category] = $disability->category;
+       }
+
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
+      'disabilities' => $disability_arr,
   	  ]);
 	}
 }
