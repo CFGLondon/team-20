@@ -14,19 +14,19 @@ use kartik\select2\Select2;
 var geocoder = new google.maps.Geocoder();
 </script>
 <style>
-  #mapCanvas {
+#mapCanvas {
     width: 500px;
     height: 400px;
     float: left;
-  }
-  #infoPanel {
+}
+#infoPanel {
     float: left;
     margin-left: 10px;
-  }
-  #infoPanel div {
+}
+#infoPanel div {
     margin-bottom: 5px;
-  }
-  </style>
+}
+</style>
 <div class="test-form">
 	<div class="report-form">
 	<div id="mapCanvas"></div>
