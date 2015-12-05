@@ -11,7 +11,6 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use DateTime;
 
 /**
  * TestController implements the CRUD actions for Report model.
@@ -144,7 +143,7 @@ class TestController extends Controller
 
 	    if ($model->load(Yii::$app->request->post())) {
             $model->location_is_precise = true;
-            $date = new DateTime();
+            $date = new \DateTime();
             $model->time_sent = $date->getTimestamp();
 		    if ($model->validate()) {
 			    $model->save();
