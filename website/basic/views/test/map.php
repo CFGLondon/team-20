@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'Map View';
 ?>
 
 <?php
@@ -13,7 +13,9 @@ use yii\helpers\Url;
 <div id="googlemaps" style="height:500px;width:80%;">
 </div>
 <div id="problemdetails">
-
+<p>Problem Details: </p>
+<p>Problem Category: </p>
+<p>Disability Category: </p>
 </div>
 
 
@@ -49,7 +51,9 @@ use yii\helpers\Url;
         animation: google.maps.Animation.DROP
       });
       marker<?=$report->idmain?>.addListener('click', function() {
-	$.getJSON("<?=Url::to(['test/jsonrecord', ['id'=>20]]) ?>");
+	$.getJSON("<?=Url::to(['test/jsonrecord', ['id'=>20]]) ?>", function( data ) {
+            console.log(data.location_prose);
+        });
         //When clicked, fetch the relevant details
         
       });
