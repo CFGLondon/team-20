@@ -43,7 +43,9 @@ $problem_prose;
 
       map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423));
       
-      	<?php $form->field($model, 'reports')->widget(CheckboxMultiple::className(), [
+      	<?php CheckboxMultiple::widget([
+    	'model' => $model,
+    	'attribute' => 'reports',
     	'dataAttribute' => 'disability_category',
     	'scriptOptions' => [
         	'ajax' => [
