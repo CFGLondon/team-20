@@ -37,7 +37,15 @@ $this->title = 'Index';
 		remote areas to report problems they face in their
 		daily lives via SMS message, allows local groups
 		to view and respond to problems, and allows ADD
-		International to view data on a global scale.</p>
+		International to view data on a global scale.
+		
+		
+		
+		
+		
+		
+		
+		</p>
 		</font>
             </div>
             <div class="col-lg-4">
