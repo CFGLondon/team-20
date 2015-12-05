@@ -1,5 +1,5 @@
 <h1>ADD International: Disability Problem Reports</h1>
-<div id="googlemaps" style="height:80%;width:80%;">
+<div id="googlemaps" style="height:500px;width:80%;">
 </div>
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
