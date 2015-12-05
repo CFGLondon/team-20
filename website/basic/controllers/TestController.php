@@ -149,7 +149,7 @@ class TestController extends Controller
       $languages = Language::find()->all();
       $language_arr = [];
       foreach($languages as $language) {
-        $language_arr[$language->id_language] = $language->name;
+        $language_arr[$language->id_language] = $language->name." (".$language->dialect.")";
        }
 
 	    return $this->render('form', [
