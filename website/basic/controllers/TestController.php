@@ -181,7 +181,7 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
-       $last_sms_data = RawSMSData::find()->orderBy(['idRawSMSData' => SORT DESC])->one();
+       $last_sms_data = RawSMSData::find()->orderBy(['idRawSMSData' => SORT_DESC])->one();
        $last_phone_number = $last_sms_data->phone_number;
        $last_text = $last_sms_data->msg_contents;
 	    return $this->render('form', [
