@@ -9,7 +9,7 @@ $this->title = 'Index';
 	background-repeat: no-repeat; padding:10px;background-position: left bottom; background-size: 130px 130px;" class="site-index"> 
 
     <div class="jumbotron">
-        <h1>ADD International Access Tracker</h1>
+        <h1>ADD Global Goals Trackerr</h1>
 
         <p class="lead">Code for Good London 2015 Demo</p>
 
