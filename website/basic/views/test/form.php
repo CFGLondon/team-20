@@ -27,7 +27,8 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'problem_prose') ?>
         <?= $form->field($model, 'editor_comments') ?>
         <?= $form->field($model, 'gender') ?>
-    
+        <?= $form->field($model, 'name') ?>
+
         <div class="form-group">
             <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
         </div>
