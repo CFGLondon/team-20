@@ -63,13 +63,12 @@ class Report extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'idmain' => 'Idmain',
-            'lat' => 'Lat',
-            'long' => 'Long',
+            'lat' => 'Latitude',
+            'long' => 'Longitude',
             'location_is_precise' => 'Location Is Precise',
             'location_prose' => 'Location Prose',
             'problem_prose' => 'Problem Prose',
-            'id_language' => 'Id Language',
+            'id_language' => 'Language',
             'time_sent' => 'Time Sent',
             'age' => 'Age',
             'gender' => 'Gender',
