@@ -51,3 +51,12 @@ foreach($reports as $report) {
 // Display the map -finally :)
 echo $map->display();
 
+?>
+<style>
+#main_map {
+    width:100%;
+    height:500px;
+    padding:20px;
+}
+</style>
+
