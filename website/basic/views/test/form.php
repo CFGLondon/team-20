@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'id_language')->dropDownList([
           1 => 'English',
           2 => 'French'
-        ]) ?>
+        ])->label('Language') ?>
         <?= $form->field($model, 'age') ?>
         <?= $form->field($model, 'problem_category') ?>
         <?= $form->field($model, 'sms_id') ?>
