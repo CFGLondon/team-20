@@ -52,6 +52,13 @@ class TestController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
+    
+    public function actionMapsTest() {
+    	$reports = Report::findAll();
+    	return $this->render('maps_test', [
+    		'reports'=> $reports,
+    	]);
+    }
 
     /**
      * Creates a new Report model.
