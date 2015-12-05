@@ -42,9 +42,9 @@ use yii\helpers\Url;
         animation: google.maps.Animation.DROP
       });
       marker<?=$report->idmain?>.addListener('click', function() {
-	<?= echo Url::to(['test/jsonrecord', [id=>20]]) ?>;
+	console.log(<?=Url::to(['test/jsonrecord', [id=>20]]) ?>);
         //When clicked, fetch the relevant details
-        object.gender
+        //object.gender
         
       });
     <?php } ?>
