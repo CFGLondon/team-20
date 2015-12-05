@@ -21,4 +21,3 @@
 <Response>
     <Message>Thank you for contacting us!</Message>
 </Response>
-INSERT INTO Report(`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`) VALUES(1.0,1.0,0,NOW(),1,0,NOW(),1);
