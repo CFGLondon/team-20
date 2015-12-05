@@ -55,9 +55,10 @@ class TestController extends Controller
     
     public function actionMapsTest() {
     	$reports = Report::findAll();
-    	return $this->render('maps_test', [
-    		'reports'=> $reports,
-    	]);
+    	print_r($reports);
+    	//return $this->render('maps_test', [
+    	//	'reports'=> $reports,
+    	//]);
     }
 
     /**
