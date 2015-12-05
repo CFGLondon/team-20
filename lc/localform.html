@@ -1,40 +1,40 @@
 <html>
 <head><title>Local Form</title></head>
 
-<form action="action_page.php" method="post">
+<form action="POSTtoDB.php" method="post">
 
   Name (optional):<br>
-  <input type="text" name="Name">
+  <input type="text" name="name">
   <br>
   
 Location:<br>
   Latitude:<br>
-  <input type="text" name="Latitude">
+  <input type="text" name="latitude">
   <br>
   Longtitude:<br>
-  <input type="text" name="Latitude">
+  <input type="text" name="longitude">
   <br>
   
 Gender:<br>
  <form>
-  <input type="radio" name="sex" value="Male" checked>Male
+  <input type="radio" name="sex" value="male" checked>Male
   <br>
-  <input type="radio" name="sex" value="Female">Female
+  <input type="radio" name="sex" value="female">Female
   <br>
-  <input type="radio" name="sex" value="Neither/Other">Neither/Other
+  <input type="radio" name="sex" value="other">Neither/Other
 </form> 
 <br>
 
 Disability:<br>
-  <input type="text" name="Disability">
+  <input type="text" name="disability">
   <br>
 
 Statement of problem/issue faced:<br>
-  <input type="text" name="Problem faced" size="35">
+  <input type="text" name="problem_prose" size="35">
   <br>
 
 Problem Classification:<br><!--Might want to modify to be more specific to the ADD infographic - 4, 8, 10, 11, 17-->
-  <select name="UN Goals">
+  <select name="problem_category">
     <option value="1">Poverty</option>
     <option value="2">Hunger</option>
     <option value="3">Healthcare</option>
@@ -58,7 +58,7 @@ Resolution of problem/aid dispatched:<br>
  <br>
 
 Comments:<br>
-  <input type="text" name="Comments">
+  <input type="text" name="localCoordinator_comments">
   <br>
  
 <br><br>
