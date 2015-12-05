@@ -9,10 +9,6 @@ use kartik\select2\Select2;
 /* @var $model app\models\Report */
 /* @var $form ActiveForm */
 ?>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<script type="text/javascript">
-var geocoder = new google.maps.Geocoder();
-</script>
 <style>
 #mapCanvas {
     width: 500px;
@@ -37,6 +33,10 @@ var geocoder = new google.maps.Geocoder();
     </br></br>
     <?php $form = ActiveForm::begin(); ?>
 
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+        var geocoder = new google.maps.Geocoder();
+        </script>
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
         <?= $form->field($model, 'requires_editing') ?>
