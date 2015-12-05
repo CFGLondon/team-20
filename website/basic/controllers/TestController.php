@@ -71,6 +71,11 @@ class TestController extends Controller
        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
        return Report::findOne($id);
     }
+    
+    public function actionJsonRecords($param) {
+    	\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+	return Report::find($param)->all();
+    }
 
     /**
      * Creates a new Report model.
