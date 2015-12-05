@@ -9,6 +9,7 @@ $this->title = 'Map Display';
 use yii\helpers\Url;
 
 $problem_prose;
+
 ?>
 
 <h1>ADD International: Disability Problem Reports</h1>
@@ -41,6 +42,16 @@ $problem_prose;
             myOptions);
 
       map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423));
+      
+      	<?php $form->field($model, 'books')->widget(CheckboxMultiple::className(), [
+    	'dataAttribute' => 'name',
+    	'scriptOptions' => [
+        	'ajax' => [
+	            'url' => Url::toRoute(['books']),
+        	],
+    	],
+    	'placeholder' => Yii::t('app', 'Select ...'),
+	]) ?>
 
       <?php foreach($reports as $report) { ?>
           position<?=$report->idmain?> = new google.maps.LatLng(
