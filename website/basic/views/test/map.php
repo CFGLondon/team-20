@@ -58,10 +58,13 @@ echo $map->display();
 <div id = "options">
 Filter problems by: 
 <form>
-<input type = "checkbox" name = "category" value="education" checked>Education<br>
-<input type = "checkbox" name = "category" value="domestic" checked>Domestic<br>
-<input type = "checkbox" name = "category" value="health" checked>Healthcare<br>
-<input type = "checkbox" name = "category" value="religion" checked>Religion<br>
+<input type = "checkbox" name = "category" value="education" checked>Education
+<tab indent=4>
+<input type = "checkbox" name = "category" value="domestic" checked>Domestic
+<tab indent=4>
+<input type = "checkbox" name = "category" value="health" checked>Healthcare
+<tab indent=4>
+<input type = "checkbox" name = "category" value="religion" checked>Religion
 </form>
 </div>
 
