@@ -58,8 +58,8 @@ class TestController extends Controller
     }
 
     //Code4good added stuff
-    public function actionMap() {
-    	$reports = Report::find()->all();
+    public function actionMap($startTime = null) {
+    	$reports = Report::find([])->all();
     	//print_r($reports);
     	return $this->render('map', [
     		'reports'=> $reports,
