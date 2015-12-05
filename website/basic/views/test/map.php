@@ -38,32 +38,34 @@ foreach($reports as $report) {
     $marker = new Marker([
         'position' => $coord,
         //'title' => 'My Home Town',
+        //'visible' => false,
+        
     ]);
      
     // Provide a shared InfoWindow to the marker
-    $marker->attachInfoWindow(
+    ${$report->idmain} ->attachInfoWindow(
         new InfoWindow([
-            'content' => '<p>'.$report->problem_prose.'</p>'
+            'content' => '<p>'.$report->problem_prose.'</p>',
         ])
     );
      
     // Add marker to the map
-    $map->addOverlay($marker);
+    ${$report->idmain}->addOverlay($marker);
 }
 
 // Display the map -finally :)
-echo $map->display();
+echo ${$report->idmain}->display();
 
 ?>
 <div id = "options">
 Filter problems by: 
 <form>
-<input type = "checkbox" name = "category" value="education" checked>Education
-<tab indent=4>
-<input type = "checkbox" name = "category" value="domestic" checked>Domestic
-<tab indent=4>
-<input type = "checkbox" name = "category" value="health" checked>Healthcare
-<tab indent=4>
+<input type = "checkbox" name = "category" value="education" checked>Education 
+
+<input type = "checkbox" name = "category" value="domestic" checked>Domestic 
+
+<input type = "checkbox" name = "category" value="health" checked>Healthcare 
+
 <input type = "checkbox" name = "category" value="religion" checked>Religion
 </form>
 </div>
