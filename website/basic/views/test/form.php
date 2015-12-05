@@ -18,7 +18,10 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
         <?= $form->field($model, 'time_updated') ?>
-        <?= $form->field($model, 'id_language') ?>
+        <?= $form->field($model, 'id_language')->dropDownList([
+          'English'=>1,
+          'French'=>2
+        ]) ?>
         <?= $form->field($model, 'age') ?>
         <?= $form->field($model, 'problem_category') ?>
         <?= $form->field($model, 'sms_id') ?>
