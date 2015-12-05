@@ -51,11 +51,16 @@ foreach($reports as $report) {
     $map->addOverlay(${$report->idmain});
 }
 
-$map->appendScript(
-"".
-"".
-""
-);
+/*
+$js = "$(checkbox).onChange(function() {";
+
+foreach($reports as $report) {
+    $js .=  "gmarker".$report->idmain.".setVisibility(false)";
+}
+
+$js .= "}";
+
+$map->appendScript($js); */
 
 // Display the map -finally :)
 echo $map->display();
