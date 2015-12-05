@@ -19,11 +19,18 @@ $this->title = 'Index';
 
         <div class="row">
             <div class="col-lg-4">
+               <h2>The NGO</h2>
                
+               <p>ADD International fights for imdependence, equality 
+               and opportunity for disabled people, with a close focus 
+               on Africa and Asia. We work towards the same goals as 
+               <a href="https://sustainabledevelopment.un.org/?menu=1300">
+               	UN Sustainable Development Goals</a>. <a href="http://www.add.org.uk">
+               	Visit our official page.</a> </p>
                 
             </div>
             <div class="col-lg-4">
-                <h2>About the app</h2>
+                <h3>About the app</h3>
 
                 <p>The Access Tracker allows mobile phone users in
 		remote areas to report problems they face in their
@@ -33,7 +40,7 @@ $this->title = 'Index';
 
             </div>
             <div class="col-lg-4">
-                <h3>They will be no longer invisible...</h3>
+                <h4>They will be no longer invisible...</h4>
                 
                 <p>Now people like Suos could report their daily 
                 encountered inequalities and get support/feedback 
