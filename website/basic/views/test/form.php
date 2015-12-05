@@ -39,7 +39,7 @@ function updateMarkerAddress(str) {
 }
 
 function initialize() {
-  var latLng = new google.maps.LatLng(-34.397, 150.644);
+  var latLng = new google.maps.LatLng(10.0, 25.0);
   var map = new google.maps.Map(document.getElementById('mapCanvas'), {
     zoom: 8,
     center: latLng,
@@ -94,7 +94,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <b>Marker status:</b>
     <div id="markerStatus"><i>Click and drag the marker.</i></div>
     </div>
-    <br>
+    </br></br>
     <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($model, 'lat') ?>
