@@ -44,16 +44,6 @@ function initialize() {
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
 
-  // Create the search box and link it to the UI element.
-  var input = document.getElementById('pac-input');
-  var searchBox = new google.maps.places.SearchBox(input);
-  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-
-  // Bias the SearchBox results towards current map's viewport.
-  map.addListener('bounds_changed', function() {
-    searchBox.setBounds(map.getBounds());
-  });
-
 
   var marker = new google.maps.Marker({
     position: latLng,
@@ -74,6 +64,16 @@ function initialize() {
   google.maps.event.addListener(marker, 'dragend', function() {
     geocodePosition(marker.getPosition());
   });
+
+  // Create the search box and link it to the UI element.
+  var input = document.getElementById('pac-input');
+  var searchBox = new google.maps.places.SearchBox(input);
+  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+  // Bias the SearchBox results towards current map's viewport.
+  map.addListener('bounds_changed', function() {
+    searchBox.setBounds(map.getBounds());
+  });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
@@ -88,7 +88,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <?php $form = ActiveForm::begin(); ?>
 
         <div id="form_get_lat_long">
-            <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+            <input id="pac-input" class="controls" type="text" placeholder="Search Box" />
             <div id="mapCanvas"></div>
             <?= $form->field($model, 'lat') ?>
             <?= $form->field($model, 'long') ?>
