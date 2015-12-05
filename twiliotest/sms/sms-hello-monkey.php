@@ -3,7 +3,7 @@
     echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 ?>
 <Response>
-    <Message>Thank you for contacting us!</Message>
+    <Message>Thank you for contacting us! Please remember to have your message be in the form: location/disability/problem you're facing/name(optional)</Message>
 </Response>
 <?php
 	include 'stringparse.php';
