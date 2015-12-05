@@ -36,7 +36,7 @@ foreach($reports as $report) {
     // Provide a shared InfoWindow to the marker
     $marker->attachInfoWindow(
         new InfoWindow([
-            'content' => '<p>'.$record->problem_prose.'</p>'
+            'content' => '<p>'.$report->problem_prose.'</p>'
         ])
     );
      
