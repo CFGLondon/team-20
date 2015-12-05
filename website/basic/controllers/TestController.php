@@ -163,7 +163,7 @@ class TestController extends Controller
        $problems = ProblemCategory::find()->all();
        $problem_arr = [];
        foreach($problems as $problem) {
-         $problem_arr[$problem->id_problem_category] = $problem_category->category;
+         $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 	    return $this->render('form', [
    	  'model' => $model,
