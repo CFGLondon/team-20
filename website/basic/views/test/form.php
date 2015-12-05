@@ -23,11 +23,11 @@ use kartik\select2\Select2;
         <?php //$form->field($model, 'id_language')->dropDownList($languages) ?>
         <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
             'data' => $languages,
-            'language' => 'de',
-            'options' => ['placeholder' => 'Select a state ...'],
-            'pluginOptions' => [
-                'allowClear' => true
-            ],
+            //'language' => 'de',
+            //'options' => ['placeholder' => 'Select a state ...'],
+            //'pluginOptions' => [
+            //   'allowClear' => true
+            //],
         ]); ?>
 
         <?= $form->field($model, 'age') ?>
