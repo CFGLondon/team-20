@@ -14,11 +14,14 @@
 	$smsstring=$_REQUEST['Body'];
 	$checkflag = checkparse($smsstring);
 	$parsed = parsetolist($smsstring);
+	if (type($parsed[4])!="string"){
+		$parsed[4] = 'N.A.';
+	}
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-	$sql = "INSERT INTO Report(`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`) 
-	VALUES('$parsed[1]','$parsed[0]','$parsed[2]',1.0,1.0,0,NOW(),1,0,NOW(),1);";
+	$sql = "INSERT INTO Report(`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`,`name`) 
+	VALUES('$parsed[1]','$parsed[0]','$parsed[2]',1.0,1.0,0,NOW(),1,0,NOW(),1,'$parsed[4]');";
 	$conn->query($sql);
 	$conn->close();
 ?>
