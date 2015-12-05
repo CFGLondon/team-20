@@ -186,8 +186,6 @@ class TestController extends Controller
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
       'problems' => $problem_arr,
-      'phone_numbers' => $phone_arr,
-      'messages' => $msg_arr,
   	  ]);
 	}
 }
