@@ -3,26 +3,23 @@
 <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
     //Google maps code
-    var position = [52.1999722,0.1247423];
 
     function initialize() {
 
       var myOptions = {
         zoom: 8,
+        zoomControl: true,
+        scaleControl: true,
+        scrollwheel: true,
+        disableDoubleClickZoom: false,
+        streetViewControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
       };
 
       map = new google.maps.Map(document.getElementById('googlemaps'),
             myOptions);
-/*
-      posCambridge = new google.maps.LatLng(position[0], position[1]);
 
-      marker = new google.maps.Marker({
-        position: posCambridge,
-        map: map,
-        draggable: false,
-        animation: google.maps.Animation.DROP
-      });*/
+      map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423););
 
       <?php foreach($reports as $report) { ?>
           position<?=$report->idmain?> = new google.maps.LatLng(
