@@ -13,7 +13,7 @@ $this->title = 'Index';
 
     </div>
 
-    <div class="body-content">
+    <div style="background-color:#FF561F; overflow: auto;" class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
@@ -31,9 +31,13 @@ $this->title = 'Index';
 
             </div>
             <div class="col-lg-4">
-                <h3>A solution to them...</h3>
-                <p>Now people like Suos could report their daily encountered inequalities and get support/feedback promptly!</p>
-                <iframe width="450" height="253" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen></iframe>
+                <h3>They will be no longer invisible...</h3>
+                
+                <p>Now people like Suos could report their daily 
+                encountered inequalities and get support/feedback 
+                promptly!</p>
+                <iframe width="450" height="253" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen>
+                </iframe>
             </div>
         </div>
 
