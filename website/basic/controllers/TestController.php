@@ -133,6 +133,7 @@ class TestController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
 	public function actionForm()
 	{
     		$model = new Report();
@@ -144,8 +145,15 @@ class TestController extends Controller
 	        }
 	    }
 
+      $languages = Language::find()->all();
+      $language_arr = [];
+      foreach($languages as $language) {
+        $language_arr[$language->id_language] = $language->name;
+       }
+
 	    return $this->render('form', [
    	  'model' => $model,
+      'languages' => $language_arr,
   	  ]);
 	}
 }
