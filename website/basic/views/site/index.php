@@ -5,7 +5,7 @@
 $this->title = 'Index';
 ?>
 <font color="white">
-<div style="background-color:#FF561F; overflow: auto; background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif); 
+<div style="background-color:#F0662F; overflow: auto; background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif); 
 	background-repeat: no-repeat; background-position: left bottom;" class="site-index"> 
 
     <div class="jumbotron">
