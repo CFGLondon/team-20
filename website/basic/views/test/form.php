@@ -97,7 +97,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <b>Marker status:</b>
         <div id="markerStatus"><i>Click and drag the marker.</i></div>
         </div>
-        </br></br>
+        <br />
+        <br />
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
         </div>
