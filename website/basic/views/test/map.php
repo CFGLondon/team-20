@@ -28,8 +28,8 @@ $map->containerOptions = [
     "id" => "main_map",
     "style" => "width:100%; height:500px;padding:20px;"
 ];
-$map->width = 100%;
-$map->height = 500px;
+$map->width = "100%";
+$map->height = "500px";
  
 foreach($reports as $report) {
     $coord = new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
