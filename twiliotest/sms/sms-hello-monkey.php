@@ -22,8 +22,8 @@
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-	$sql = "INSERT INTO Report(`requires_editing`,`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`,`name`) 
-	VALUES($checkflag,'$parsed[1]','$parsed[0]','$parsed[2]',1.0,1.0,0,NOW(),1,0,NOW(),1,'$nameout');";
+	$sql = "INSERT INTO Report(``disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`,`name`) 
+	VALUES('$parsed[1]','$parsed[0]','$parsed[2]',1.0,1.0,0,NOW(),$checkflag,0,NOW(),1,'$nameout');";
 	$conn->query($sql);
 	$conn->close();
 ?>
