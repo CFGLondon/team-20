@@ -14,11 +14,9 @@
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
 	$sql = "INSERT INTO DisabilityCategory (category)
-	VALUES ('Test')";
+	VALUES ('$parsed(0)')";
 	$conn->query($sql);
-
 	$conn->close();
-	
 ?>
 <Response>
     <Message>Thank you for contacting us!</Message>
