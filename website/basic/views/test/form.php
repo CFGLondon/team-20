@@ -79,28 +79,19 @@ google.maps.event.addDomListener(window, 'load', initialize);
     width: 100%;
     height: 400px;
 }
-#infoPanel {
-    float: left;
-    margin-left: 10px;
-}
-#infoPanel div {
-    margin-bottom: 5px;
-}
 </style>
 <div class="test-form">
 	<div class="report-form">
     <?php $form = ActiveForm::begin(); ?>
 
         <div id="form_get_lat_long">
-        <div id="mapCanvas"></div>
-        <div id="infoPanel">
-        <b>Marker status:</b>
-        <div id="markerStatus"><i>Click and drag the marker.</i></div>
-        </div>
-        <br />
-        <br />
-        <?= $form->field($model, 'lat') ?>
-        <?= $form->field($model, 'long') ?>
+            <div id="mapCanvas"></div>
+            <div id="infoPanel">
+            <b>Marker status:</b>
+            <div id="markerStatus"><i>Click and drag the marker.</i></div>
+            </div>
+            <?= $form->field($model, 'lat') ?>
+            <?= $form->field($model, 'long') ?>
         </div>
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
