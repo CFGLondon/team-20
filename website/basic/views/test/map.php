@@ -25,7 +25,7 @@ $map = new Map([
 ]);
  
 foreach($reports as $report) {
-    $coord->new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
+    $coord = new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
 
     // Lets add a marker now
     $marker = new Marker([
@@ -36,7 +36,7 @@ foreach($reports as $report) {
     // Provide a shared InfoWindow to the marker
     $marker->attachInfoWindow(
         new InfoWindow([
-            'content' => '<p>'.$record->problem_prose.'</p>'
+            'content' => '<p>'.$report->problem_prose.'</p>'
         ])
     );
      
