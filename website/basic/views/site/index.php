@@ -37,19 +37,11 @@ $this->title = 'Index';
 		remote areas to report problems they face in their
 		daily lives via SMS message, allows local groups
 		to view and respond to problems, and allows ADD
-		International to view data on a global scale.
-		
-		
-		
-		
-		
-		
-		
-		</p>
+		International to view data on a global scale. </p>
 		</font>
             </div>
             <div class="col-lg-4">
-                <h4>They will be no longer invisible...</h4>
+                <h4>They will no longer be invisible...</h4>
                 
                 <p>Now people like Suos could report their daily 
                 encountered inequalities and get support/feedback 
