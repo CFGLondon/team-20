@@ -10,7 +10,7 @@ use kartik\select2\Select2;
 /* @var $form ActiveForm */
 $this->title = "Form";
 ?>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
 <script type="text/javascript">
 var geocoder = new google.maps.Geocoder();
 </script>
