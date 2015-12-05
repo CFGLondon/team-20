@@ -62,9 +62,7 @@ class TestController extends Controller
         $searchquery = [];
         if($startTime != null) {
             echo "given start time is :". $startTime."<br />";
-        }
-        
-             
+        }    
 
     	$reports = Report::find([])->all();
     	//print_r($reports);

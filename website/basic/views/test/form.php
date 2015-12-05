@@ -12,7 +12,63 @@ use kartik\select2\Select2;
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
 var geocoder = new google.maps.Geocoder();
+</script>
+<style>
+  #mapCanvas {
+    width: 500px;
+    height: 400px;
+    float: left;
+  }
+  #infoPanel {
+    float: left;
+    margin-left: 10px;
+  }
+  #infoPanel div {
+    margin-bottom: 5px;
+  }
+  </style>
+<div class="test-form">
+	<div class="report-form">
+	<div id="mapCanvas"></div>
+    <div id="infoPanel">
+    <b>Marker status:</b>
+    <div id="markerStatus"><i>Click and drag the marker.</i></div>
+    </div>
+    </br></br>
+    <?php $form = ActiveForm::begin(); ?>
 
+        <?= $form->field($model, 'lat') ?>
+        <?= $form->field($model, 'long') ?>
+        <?= $form->field($model, 'requires_editing') ?>
+        <?= $form->field($model, 'is_solved') ?>
+        <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
+            'data' => $languages,
+            //'language' => 'de',
+            //'options' => ['placeholder' => 'Select a state ...'],
+            //'pluginOptions' => [
+            //   'allowClear' => true
+            //],
+        ]) ?>
+        <?= $form->field($model, 'age') ?>
+        <?= $form->field($model, 'problem_category') ?>
+        <?= $form->field($model, 'sms_id') ?>
+        <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
+            'data'=>$disabilities,
+        ]) ?>
+        <?= $form->field($model, 'location_prose') ?>
+        <?= $form->field($model, 'problem_prose') ?>
+        <?= $form->field($model, 'editor_comments') ?>
+        <?= $form->field($model, 'gender') ?>
+        <?= $form->field($model, 'name') ?>
+
+        <div class="form-group">
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+        </div>
+    <?php ActiveForm::end(); ?>
+
+</div><!-- test-form -->
+
+<script>
 function geocodePosition(pos) {
   geocoder.geocode({
     latLng: pos
@@ -73,57 +129,3 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<style>
-  #mapCanvas {
-    width: 500px;
-    height: 400px;
-    float: left;
-  }
-  #infoPanel {
-    float: left;
-    margin-left: 10px;
-  }
-  #infoPanel div {
-    margin-bottom: 5px;
-  }
-  </style>
-<div class="test-form">
-	<div class="report-form">
-	<div id="mapCanvas"></div>
-    <div id="infoPanel">
-    <b>Marker status:</b>
-    <div id="markerStatus"><i>Click and drag the marker.</i></div>
-    </div>
-    </br></br>
-    <?php $form = ActiveForm::begin(); ?>
-
-        <?= $form->field($model, 'lat') ?>
-        <?= $form->field($model, 'long') ?>
-        <?= $form->field($model, 'requires_editing') ?>
-        <?= $form->field($model, 'is_solved') ?>
-        <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
-            'data' => $languages,
-            //'language' => 'de',
-            //'options' => ['placeholder' => 'Select a state ...'],
-            //'pluginOptions' => [
-            //   'allowClear' => true
-            //],
-        ]) ?>
-        <?= $form->field($model, 'age') ?>
-        <?= $form->field($model, 'problem_category') ?>
-        <?= $form->field($model, 'sms_id') ?>
-        <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
-            'data'=>$disabilities,
-        ]) ?>
-        <?= $form->field($model, 'location_prose') ?>
-        <?= $form->field($model, 'problem_prose') ?>
-        <?= $form->field($model, 'editor_comments') ?>
-        <?= $form->field($model, 'gender') ?>
-        <?= $form->field($model, 'name') ?>
-
-        <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
-        </div>
-    <?php ActiveForm::end(); ?>
-
-</div><!-- test-form -->
