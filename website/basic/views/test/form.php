@@ -11,7 +11,7 @@ use kartik\select2\Select2;
 ?>
 <style>
 #mapCanvas {
-    width: 500px;
+    width: 100%;
     height: 400px;
 }
 #infoPanel {
