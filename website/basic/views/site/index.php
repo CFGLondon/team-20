@@ -4,7 +4,7 @@
 
 $this->title = 'Index';
 ?>
-<font color="white">
+
 <div style="background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif);" class="site-index"> 
 
     <div class="jumbotron">
@@ -43,5 +43,5 @@ $this->title = 'Index';
         </div>
 
     </div>
-    </font>
+
 </div>
