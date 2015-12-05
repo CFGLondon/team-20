@@ -48,6 +48,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
     <?= $form->field($model, 'disability_category')->textInput() ?>
 
+    <?= $form->field($disability_category, 'category')->textInput() ?>
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>
