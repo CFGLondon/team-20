@@ -43,18 +43,18 @@ foreach($reports as $report) {
     ]);
      
     // Provide a shared InfoWindow to the marker
-    ${'idmain'=> $report} ->attachInfoWindow(
+    ${$report->idmain} ->attachInfoWindow(
         new InfoWindow([
             'content' => '<p>'.$report->problem_prose.'</p>',
         ])
     );
      
     // Add marker to the map
-    ${'idmain'=> $report}->addOverlay($marker);
+    ${$report->idmain}->addOverlay($marker);
 }
 
 // Display the map -finally :)
-echo ${'idmain'=> $report}->display();
+echo ${$report->idmain}->display();
 
 ?>
 <div id = "options">

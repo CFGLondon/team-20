@@ -102,12 +102,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <?= $form->field($model, 'problem_category')->widget(Select2::classname(), [
             'data'=>$problems,
           ]) ?>
-        <?= $form->field($model, 'sms_id') ?>
+        <?= $form->field($model, 'sms_id')->textInput($last_phone_number) ?>
         <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
             'data'=>$disabilities,
         ]) ?>
         <?= $form->field($model, 'location_prose') ?>
-        <?= $form->field($model, 'problem_prose') ?>
+        <?= $form->field($model, 'problem_prose')->textarea($last_text) ?>
         <?= $form->field($model, 'editor_comments') ?>
         <?= $form->field($model, 'gender') ?>
         <?= $form->field($model, 'name') ?>
