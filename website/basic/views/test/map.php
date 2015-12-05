@@ -38,7 +38,7 @@ foreach($reports as $report) {
         'position' => $coord,
         //'title' => 'My Home Town',
         //'visible' => false,
-        
+        'category' => $report->problem_category  
     ]);
      
     // Provide a shared InfoWindow to the marker
