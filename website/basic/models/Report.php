@@ -24,6 +24,8 @@ use Yii;
  * @property string $time_updated
  * @property integer $sms_id
  * @property integer $disability_category
+ * @property string $disability_prose
+ * @property string $name
  *
  * @property Language $idLanguage
  * @property ProblemCategory $problemCategory
@@ -49,9 +51,9 @@ class Report extends \yii\db\ActiveRecord
             [['lat', 'long', 'location_is_precise', 'time_sent', 'requires_editing', 'is_solved', 'time_updated'], 'required'],
             [['lat', 'long'], 'number'],
             [['location_is_precise', 'id_language', 'age', 'requires_editing', 'problem_category', 'is_solved', 'sms_id', 'disability_category'], 'integer'],
-            [['location_prose', 'problem_prose', 'editor_comments'], 'string'],
+            [['location_prose', 'problem_prose', 'editor_comments', 'disability_prose'], 'string'],
             [['time_sent', 'time_updated'], 'safe'],
-            [['gender'], 'string', 'max' => 45]
+            [['gender', 'name'], 'string', 'max' => 45]
         ];
     }
 
@@ -78,6 +80,8 @@ class Report extends \yii\db\ActiveRecord
             'time_updated' => 'Time Updated',
             'sms_id' => 'Sms ID',
             'disability_category' => 'Disability Category',
+            'disability_prose' => 'Disability Prose',
+            'name' => 'Name',
         ];
     }
 
