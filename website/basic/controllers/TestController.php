@@ -52,7 +52,7 @@ class TestController extends Controller
             'model' => $this->findModel($id),
         ]);
     }
-    
+
     public function actionMap() {
     	$reports = Report::find()
     		->all();
@@ -134,7 +134,6 @@ class TestController extends Controller
 	    if ($model->load(Yii::$app->request->post())) {
 		    if ($model->validate()) {
 			    $model->save();
-			    echo 'hello';
         	    return;
 	        }
 	    }
