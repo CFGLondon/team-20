@@ -53,6 +53,15 @@ class TestController extends Controller
         ]);
     }
 
+    public function actionMap() {
+    	$reports = Report::find()
+    		->all();
+    	//print_r($reports);
+    	return $this->render('map', [
+    		'reports'=> $reports,
+    	]);
+    }
+
     /**
      * Creates a new Report model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -125,7 +134,6 @@ class TestController extends Controller
 	    if ($model->load(Yii::$app->request->post())) {
 		    if ($model->validate()) {
 			    $model->save();
-			    echo 'hello';
         	    return;
 	        }
 	    }
