@@ -51,7 +51,7 @@ use yii\helpers\Url;
         animation: google.maps.Animation.DROP
       });
       marker<?=$report->idmain?>.addListener('click', function() {
-	$.getJSON("<?=Url::to(['test/jsonrecord', ['id'=>20]]) ?>", function( data ) {
+	$.getJSON("<?=Url::to(['test/jsonrecord', 'id'=>20]) ?>", function( data ) {
             console.log(data.location_prose);
         });
         //When clicked, fetch the relevant details
