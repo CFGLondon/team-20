@@ -28,7 +28,7 @@ use kartik\select2\Select2;
             'pluginOptions' => [
                 'allowClear' => true
             ],
-        ]);
+        ]); ?>
 
         <?= $form->field($model, 'age') ?>
         <?= $form->field($model, 'problem_category') ?>
