@@ -20,7 +20,7 @@ use dosamigos\google\maps\overlays\Polygon;
 use dosamigos\google\maps\layers\BicyclingLayer;
 
 $map = new Map([
-    'center' => new LatLng(['lat' => 39.720089311812094, 'lng' => 2.91165944519042]);
+    'center' => new LatLng(['lat' => 39.720089311812094, 'lng' => 2.91165944519042]),
     'zoom' => 1,
 ]);
  
