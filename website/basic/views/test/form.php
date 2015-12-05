@@ -71,6 +71,7 @@ function initialize() {
     geocodePosition(marker.getPosition());
   });
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <style>
   #mapCanvas {
@@ -93,6 +94,7 @@ function initialize() {
     <b>Marker status:</b>
     <div id="markerStatus"><i>Click and drag the marker.</i></div>
     </div>
+    <br>
     <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($model, 'lat') ?>
