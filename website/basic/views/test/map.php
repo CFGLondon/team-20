@@ -33,9 +33,8 @@ $map->height = "500px";
  
 foreach($reports as $report) {
     $coord = new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
-
     // Lets add a marker now
-    $marker = new Marker([
+    ${$report->idmain} = new Marker([
         'position' => $coord,
         //'title' => 'My Home Town',
         //'visible' => false,
@@ -50,13 +49,29 @@ foreach($reports as $report) {
     );
      
     // Add marker to the map
-    ${$report->idmain}->addOverlay($marker);
+    $map->addOverlay(${$report->idmain});
 }
 
 // Display the map -finally :)
-echo ${$report->idmain}->display();
+echo $map->display();
+
+
+public function hideCatID($id){
+    foreach($reports as $report) {
+        if($report->problem_category == $id){
+            ${$report->idmain}->markerOptions = [
+		'visible' => false;
+            ];
+        }
+    }
+}
 
 ?>
+
+<script>
+
+</script>
+
 <div id = "options">
 Filter problems by: 
 <form>

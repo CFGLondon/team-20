@@ -21,12 +21,12 @@ $this->title = 'Index';
             <div class="col-lg-4">
                <h2>The NGO</h2>
                
-               <p>ADD International fights for imdependence, equality 
+               <p>ADD International fights for independence, equality 
                and opportunity for disabled people, with a close focus 
-               on Africa and Asia. We work towards the same goals as 
+               in Africa and Asia. We work towards the same goals as 
                <a href="https://sustainabledevelopment.un.org/?menu=1300">
-               	UN Sustainable Development Goals</a>. <a href="http://www.add.org.uk">
-               	Visit our official page.</a> </p>
+               	UN Sustainable Development Goals</a>. For more information, 
+               	please <a href="http://www.add.org.uk">visit our official website</a>. </p>
                 
             </div>
             <div style="background-color:#FFFFFF; overflow: auto;" class="col-lg-4">
