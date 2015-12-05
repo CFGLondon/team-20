@@ -9,5 +9,5 @@
 	
 ?>
 <Response>
-    <Message><?php echo $parsed ?>Thank you for contacting us!</Message>
+    <Message><?php echo $parsed(0) ?>Thank you for contacting us!</Message>
 </Response>
