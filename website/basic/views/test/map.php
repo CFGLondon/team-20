@@ -7,9 +7,8 @@ $this->title = 'Map Display';
 
 <?php
 use yii\helpers\Url;
-
+use diiimonn\widgets\CheckboxMultiple;
 $problem_prose;
-
 ?>
 
 <h1>ADD International: Disability Problem Reports</h1>
