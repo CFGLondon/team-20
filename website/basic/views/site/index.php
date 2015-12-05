@@ -5,7 +5,7 @@
 $this->title = 'Index';
 ?>
 <font color="white">
-<div style="background-color:#FF561F; overflow: auto;" class="site-index">
+<div style="background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif);" class="site-index"> 
 
     <div class="jumbotron">
         <h1>ADD International Access Tracker</h1>
