@@ -26,7 +26,7 @@ $this->title = 'Index';
                in Africa and Asia. We work towards the same goals as 
                <a href="https://sustainabledevelopment.un.org/?menu=1300">
                	UN Sustainable Development Goals</a>. For more information, 
-               	please <a href="http://www.add.org.uk">visit our official website.</a> </p>
+               	please <a href="http://www.add.org.uk">visit our official website</a>. </p>
                 
             </div>
             <div style="background-color:#FFFFFF; overflow: auto;" class="col-lg-4">
