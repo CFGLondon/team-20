@@ -1,6 +1,6 @@
 <div id="googlemaps" style="height:100%;width:100%;position:absolute; ">
 </div>
-
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script>
     //Google maps code
     var position = [52.1999722,0.1247423];
