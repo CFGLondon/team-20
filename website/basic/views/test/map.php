@@ -38,23 +38,23 @@ foreach($reports as $report) {
     $marker = new Marker([
         'position' => $coord,
         //'title' => 'My Home Town',
-        'visible' => false,
+        //'visible' => false,
         
     ]);
      
     // Provide a shared InfoWindow to the marker
-    $marker->attachInfoWindow(
+    ${'idmain'=> $report} ->attachInfoWindow(
         new InfoWindow([
             'content' => '<p>'.$report->problem_prose.'</p>',
         ])
     );
      
     // Add marker to the map
-    $map->addOverlay($marker);
+    ${'idmain'=> $report}->addOverlay($marker);
 }
 
 // Display the map -finally :)
-echo $map->display();
+echo ${'idmain'=> $report}->display();
 
 ?>
 <div id = "options">
