@@ -19,7 +19,7 @@
       map = new google.maps.Map(document.getElementById('googlemaps'),
             myOptions);
 
-      map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423););
+      map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423));
 
       <?php foreach($reports as $report) { ?>
           position<?=$report->idmain?> = new google.maps.LatLng(
