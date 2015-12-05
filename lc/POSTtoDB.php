@@ -5,8 +5,13 @@
         $data = $_POST['data'];
     } else {
         header( 'location: localform.html' );
+        echo 'exiting..'
         exit();
     }
+    
+    echo 'hey'
+    echo $_POST['data']
+    
 
 //setting up mysql details
 	$sql_server = "ec2-54-170-43-20.eu-west-1.compute.amazonaws.com";
