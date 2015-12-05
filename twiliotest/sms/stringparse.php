@@ -3,10 +3,10 @@
 		$outputarray1 = explode("/",$inputstring1);
 		$result = count($outputarray1);
 		if ($result > 4 || $result < 3){
-			return true;
+			return 1;
 		}
 		else{
-			return false;
+			return 0;
 		}
 	}
 	function parsetolist($inputstring2){
