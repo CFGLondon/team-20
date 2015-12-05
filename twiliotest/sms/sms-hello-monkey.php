@@ -18,7 +18,7 @@
 	$address=urlencode($parsed[0]);
     $loc = geocoder::getLocation($address);
     $numberstring = $_REQUEST['From'];
-    if (sizeof($nameout>3)){
+    if (sizeof($parsed>3)){
 		$nameout = $parsed[3];
 	}
 	$conn = new mysqli($servername, $username, $password, $dbname);
