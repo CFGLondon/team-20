@@ -17,7 +17,6 @@ use kartik\select2\Select2;
         <?= $form->field($model, 'long') ?>
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
-        <?= $form->field($model, 'time_updated') ?>
         <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
             'data' => $languages,
             //'language' => 'de',

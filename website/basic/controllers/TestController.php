@@ -146,6 +146,7 @@ class TestController extends Controller
             $model->location_is_precise = true;
             $date = new DateTime();
             $model->time_sent = $date->format('Y-m-d H:i:s');
+            $model->time_updated = $date->format('Y-m-d H:i:s');
 		    if ($model->validate()) {
 			    $model->save();
                 echo "Success!";
