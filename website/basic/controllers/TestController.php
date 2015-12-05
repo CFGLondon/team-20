@@ -118,19 +118,20 @@ class TestController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-public function actionForm()
-{
-    $model = new Report();
+	public function actionForm()
+	{
+    		$model = new Report();
 
-    if ($model->load(Yii::$app->request->post())) {
-        if ($model->validate()) {
-            // form inputs are valid, do something here
-            return;
-        }
-    }
+	    if ($model->load(Yii::$app->request->post())) {
+		    if ($model->validate()) {
+			    $model->save();
+			    echo 'hello';
+        	    return;
+	        }
+	    }
 
-    return $this->render('form', [
-        'model' => $model,
-    ]);
-}
+	    return $this->render('form', [
+   	  'model' => $model,
+  	  ]);
+	}
 }
