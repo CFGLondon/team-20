@@ -59,6 +59,13 @@ class TestController extends Controller
 
     //Code4good added stuff
     public function actionMap($startTime = null) {
+        $searchquery = [];
+        if($startTime != null) {
+            echo "given start time is :". $startTime."<br />";
+        }
+        
+             
+
     	$reports = Report::find([])->all();
     	//print_r($reports);
     	return $this->render('map', [
