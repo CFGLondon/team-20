@@ -1,0 +1,68 @@
+<html>
+<head><title>Local Form</title></head>
+
+<form action="POSTtoDB.php" method="post">
+
+  Name (optional):<br>
+  <input type="text" name="name">
+  <br>
+  
+Location:<br>
+  Latitude:<br>
+  <input type="text" name="latitude">
+  <br>
+  Longtitude:<br>
+  <input type="text" name="longitude">
+  <br>
+  
+Gender:<br>
+ <form>
+  <input type="radio" name="sex" value="male" checked>Male
+  <br>
+  <input type="radio" name="sex" value="female">Female
+  <br>
+  <input type="radio" name="sex" value="other">Neither/Other
+</form> 
+<br>
+
+Disability:<br>
+  <input type="text" name="disability">
+  <br>
+
+Statement of problem/issue faced:<br>
+  <input type="text" name="problem_prose" size="35">
+  <br>
+
+Problem Classification:<br><!--Might want to modify to be more specific to the ADD infographic - 4, 8, 10, 11, 17-->
+  <select name="problem_category">
+    <option value="1">Poverty</option>
+    <option value="2">Hunger</option>
+    <option value="3">Healthcare</option>
+    <option value="4">Education</option>
+    <option value="5">Gender Equality</option>
+    <option value="6">Clean water and Sanitation</option>
+    <option value="7">Affordable & Clean energy</option>
+    <option value="8">Work & Economic growth</option>
+    <option value="9">Industry & Infrastructure</option>
+    <option value="10">Inequalities</option><!--This looks too vague. Mapped from 'Reduced Inequalities'--> 
+    <option value="11">Sustainable cities/communities</option>
+    <option value="12">Responsible Consumption & Production</option><!--irrelevant to disability..?-->
+</select>
+<br>
+
+Resolution of problem/aid dispatched:<br>
+ <form>
+  <input type="radio" name="aid" value="Yes" checked>Yes
+  <br>
+  <input type="radio" name="aid" value="No">No
+ <br>
+
+Comments:<br>
+  <input type="text" name="localCoordinator_comments">
+  <br>
+ 
+<br><br>
+<input type="submit" value="Submit">
+
+</form>
+</html>
