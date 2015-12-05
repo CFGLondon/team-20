@@ -74,7 +74,7 @@ function initialize() {
 </script>
 <div class="test-form">
 	<div class="report-form">
-	<div id="mapCanvas">
+	<div id="mapCanvas"></div>
     <div id="infoPanel">
     <b>Marker status:</b>
     <div id="markerStatus"><i>Click and drag the marker.</i></div>
