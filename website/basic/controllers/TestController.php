@@ -62,7 +62,7 @@ class TestController extends Controller
         $searchquery = [];
         if($startTime != null) {
             echo "given start time is :". $startTime."<br />";
-        }    
+        }
 
     	$reports = Report::find([])->all();
     	//print_r($reports);
@@ -150,17 +150,13 @@ class TestController extends Controller
 	public function actionForm()
 	{
     	$model = new Report();
-      $disability_category = new DisabilityCategory();
-	    if ($model->load(Yii::$app->request->post()) && $disability_category->load(Yii::$app->request->post())) {
+	    if ($model->load(Yii::$app->request->post())) {
             $model->location_is_precise = true;
             $date = new DateTime();
             $model->time_sent = $date->format('Y-m-d H:i:s');
             $model->time_updated = $date->format('Y-m-d H:i:s');
 		    if ($model->validate()) {
 			    $model->save();
-          if($disability_category->category != "") {
-            $disability_category->save();
-          }
                 echo "Success!";
         	    return;
 	        }
@@ -184,17 +180,11 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
-       $smses = RawSMSData::find()->all();
-       $phone_arr = [];
-       foreach($smses as $sms) {
-         $phone_arr[$sms->idRawSMSData] = $sms->phone_number;
-       }
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
       'problems' => $problem_arr,
-      'phones' => $phone_arr,
   	  ]);
 	}
 }

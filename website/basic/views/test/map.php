@@ -38,12 +38,14 @@ foreach($reports as $report) {
     $marker = new Marker([
         'position' => $coord,
         //'title' => 'My Home Town',
+        'visible' => false,
+        
     ]);
      
     // Provide a shared InfoWindow to the marker
     $marker->attachInfoWindow(
         new InfoWindow([
-            'content' => '<p>'.$report->problem_prose.'</p>'
+            'content' => '<p>'.$report->problem_prose.'</p>',
         ])
     );
      
