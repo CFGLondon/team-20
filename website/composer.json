@@ -1,7 +1,8 @@
 {
     "require": {
         "yiisoft/yii2": "2.0.6",
-        "2amigos/yii2-google-maps-library": "*"
+        "2amigos/yii2-google-maps-library": "*",
+        "kartik-v/yii2-widget-select2": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-gii": "^2.0"
