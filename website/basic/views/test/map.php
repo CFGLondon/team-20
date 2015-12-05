@@ -22,8 +22,11 @@ use dosamigos\google\maps\layers\BicyclingLayer;
 $map = new Map([
     'center' => new LatLng(['lat' => 39.720089311812094, 'lng' => 2.91165944519042]),
     'zoom' => 1,
-    'width' => '100%',
 ]);
+
+$map->containerOptions = [
+    "id" => "main_map",
+];
  
 foreach($reports as $report) {
     $coord = new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
