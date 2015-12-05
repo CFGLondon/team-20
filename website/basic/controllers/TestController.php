@@ -6,6 +6,7 @@ use Yii;
 use app\models\Report;
 use app\models\Language;
 use app\models\DisabilityCategory;
+use app\models\ProblemCategory;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -159,10 +160,16 @@ class TestController extends Controller
          $disability_arr[$disability->id_disability_category] = $disability->category;
        }
 
+       $problems = ProblemCategory::find()->all();
+       $problem_arr = [];
+       foreach($problems as $problem) {
+         $problem_arr[$problem->id_problem_category] = $problem_category->category;
+       }
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
+      'problems' => $problem_arr,
   	  ]);
 	}
 }
