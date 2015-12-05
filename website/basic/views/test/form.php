@@ -117,7 +117,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
             'data'=>$disabilities,
         ]) ?>
-        <?= $form->field($disability_category, 'category') ?>
         <?= $form->field($model, 'location_prose') ?>
         <?= $form->field($model, 'problem_prose') ?>
         <?= $form->field($model, 'editor_comments') ?>
