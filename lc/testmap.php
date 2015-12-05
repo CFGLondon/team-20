@@ -4,7 +4,7 @@
 	$password = "code4good";
 	$database = "add_db";
 
-
+	echo "Hello world";
 	// Start XML file, create parent node
 	$doc = domxml_new_doc("1.0");
 	$node = $doc->create_element("markers");
@@ -40,7 +40,7 @@
   		//$newnode->set_attribute("name", $row['name']);
   		//$newnode->set_attribute("address", $row['address']);
   		$newnode->set_attribute("lat", $row['lat']);
-  		$newnode->set_attribute("lng", $row['long']);
+  		$newnode->set_attribute("long", $row['long']);
   		//$newnode->set_attribute("type", $row['type']);
 	}
 
