@@ -62,7 +62,7 @@ class TestController extends Controller
         $searchquery = [];
         if($startTime != null) {
             echo "given start time is :". $startTime."<br />";
-        }    
+        }
 
     	$reports = Report::find([])->all();
     	//print_r($reports);
@@ -75,7 +75,7 @@ class TestController extends Controller
        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
        return Report::findOne($id);
     }
-    
+
     public function actionJsonrecords($param) {
     	\Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
 	    return Report::find($param)->all();
@@ -150,7 +150,6 @@ class TestController extends Controller
 	public function actionForm()
 	{
     	$model = new Report();
-
 	    if ($model->load(Yii::$app->request->post())) {
             $model->location_is_precise = true;
             $date = new DateTime();
@@ -180,6 +179,7 @@ class TestController extends Controller
        foreach($problems as $problem) {
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
+
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,

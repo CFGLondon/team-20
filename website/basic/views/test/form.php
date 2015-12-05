@@ -52,21 +52,21 @@ function initialize() {
     map: map,
     draggable: true
   });
-  
+
   // Update current position info.
   updateMarkerPosition(latLng);
   geocodePosition(latLng);
-  
+
   // Add dragging event listeners.
   google.maps.event.addListener(marker, 'dragstart', function() {
     updateMarkerAddress('Dragging...');
   });
-  
+
   google.maps.event.addListener(marker, 'drag', function() {
     updateMarkerStatus('Dragging...');
     updateMarkerPosition(marker.getPosition());
   });
-  
+
   google.maps.event.addListener(marker, 'dragend', function() {
     updateMarkerStatus('Drag ended');
     geocodePosition(marker.getPosition());
@@ -113,7 +113,9 @@ google.maps.event.addDomListener(window, 'load', initialize);
             //],
         ]) ?>
         <?= $form->field($model, 'age') ?>
-        <?= $form->field($model, 'problem_category') ?>
+        <?= $form->field($model, 'problem_category')->widget(Select2::classname(), [
+            'data'=>$problems,
+          ]) ?>
         <?= $form->field($model, 'sms_id') ?>
         <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
             'data'=>$disabilities,
@@ -130,4 +132,3 @@ google.maps.event.addDomListener(window, 'load', initialize);
     <?php ActiveForm::end(); ?>
 
 </div><!-- test-form -->
-
