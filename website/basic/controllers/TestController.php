@@ -181,12 +181,13 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
-
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
       'problems' => $problem_arr,
+      'phone_numbers' => $phone_arr,
+      'messages' => $msg_arr,
   	  ]);
 	}
 }
