@@ -38,6 +38,7 @@ foreach($reports as $report) {
     $marker = new Marker([
         'position' => $coord,
         //'title' => 'My Home Town',
+        'visible' => false,
         
     ]);
      
@@ -45,7 +46,6 @@ foreach($reports as $report) {
     $marker->attachInfoWindow(
         new InfoWindow([
             'content' => '<p>'.$report->problem_prose.'</p>',
-            'visible' => false,
         ])
     );
      
