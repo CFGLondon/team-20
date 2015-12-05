@@ -10,8 +10,8 @@
 		}
 	}
 	function parsetolist($inputstring2){
-		 $outputarray2 = explode("/",$inputstring2);
-		return $outputarray2;
+		$new_arr = array_map('trim', explode('/', $inputstring2));
+		return $new_arr;
 	}
 
 
