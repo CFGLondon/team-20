@@ -76,10 +76,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
         <div id="form_get_lat_long">
             <div id="mapCanvas"></div>
-            <div id="infoPanel">
-            <b>Marker status:</b>
-            <div id="markerStatus"><i>Click and drag the marker.</i></div>
-            </div>
             <?= $form->field($model, 'lat') ?>
             <?= $form->field($model, 'long') ?>
         </div>
@@ -87,11 +83,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
         <?= $form->field($model, 'is_solved') ?>
         <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
             'data' => $languages,
-            //'language' => 'de',
-            //'options' => ['placeholder' => 'Select a state ...'],
-            //'pluginOptions' => [
-            //   'allowClear' => true
-            //],
         ]) ?>
         <?= $form->field($model, 'age') ?>
         <?= $form->field($model, 'problem_category')->widget(Select2::classname(), [
