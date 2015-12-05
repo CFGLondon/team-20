@@ -7,7 +7,7 @@ $this->title = 'Map Display';
 
 <?php
 use yii\helpers\Url;
-use diiimonn\yii2_widget_checkbox_multiple\CheckboxMultiple;
+
 $problem_prose;
 ?>
 
@@ -42,17 +42,6 @@ $problem_prose;
 
       map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423));
       
-      	<?php CheckboxMultiple::widget([
-    	'model' => $model,
-    	'attribute' => 'reports',
-    	'dataAttribute' => 'disability_category',
-    	'scriptOptions' => [
-        	'ajax' => [
-	            'url' => Url::toRoute(['reports']),
-        	],
-    	],
-    	'placeholder' => Yii::t('app', 'Select ...'),
-	]) ?>
 
       <?php foreach($reports as $report) { ?>
           position<?=$report->idmain?> = new google.maps.LatLng(
