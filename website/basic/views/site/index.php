@@ -29,7 +29,8 @@ $this->title = 'Index';
                	Visit our official page.</a> </p>
                 
             </div>
-            <div class="col-lg-4">
+            <div style="background-color:#FFFFFF; overflow: auto;" class="col-lg-4">
+                <font color="#F0662F">
                 <h3>About the app</h3>
 
                 <p>The Access Tracker allows mobile phone users in
@@ -37,7 +38,7 @@ $this->title = 'Index';
 		daily lives via SMS message, allows local groups
 		to view and respond to problems, and allows ADD
 		International to view data on a global scale.</p>
-
+		</font>
             </div>
             <div class="col-lg-4">
                 <h4>They will be no longer invisible...</h4>
