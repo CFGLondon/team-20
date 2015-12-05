@@ -2,6 +2,7 @@
 	function checkparse($inputstring1){
 		$outputarray1 = explode("/",$inputstring2);
 		$result = count($outputarray1);
+		echo $result;
 		if ($result > 4 || $result < 3){
 			return true;
 		}
