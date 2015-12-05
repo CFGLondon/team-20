@@ -30,16 +30,16 @@ function updateMarkerStatus(str) {
 }
 
 function updateMarkerPosition(latLng) {
-  document.getElementById('report-long').innerHTML =  latLng.lng();
-  document.getElementById('report-lat').innerHTML =  latLng.lat();
+  document.getElementById('report-long').value =  latLng.lng();
+  document.getElementById('report-lat').value =  latLng.lat();
 }
 
 function updateMarkerAddress(str) {
-  document.getElementById('report-location_prose').innerHTML = str;
+  document.getElementById('report-location_prose').value = str;
 }
 
 function initialize() {
-  var latLng = new google.maps.LatLng(-34.397, 150.644);
+  var latLng = new google.maps.LatLng(10.0, 25.0);
   var map = new google.maps.Map(document.getElementById('mapCanvas'), {
     zoom: 8,
     center: latLng,
@@ -71,6 +71,7 @@ function initialize() {
     geocodePosition(marker.getPosition());
   });
 }
+google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <style>
   #mapCanvas {
@@ -93,6 +94,7 @@ function initialize() {
     <b>Marker status:</b>
     <div id="markerStatus"><i>Click and drag the marker.</i></div>
     </div>
+    </br></br>
     <?php $form = ActiveForm::begin(); ?>
 
         <?= $form->field($model, 'lat') ?>
