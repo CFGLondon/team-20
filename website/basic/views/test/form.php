@@ -119,6 +119,7 @@ function initialize() {
       }
     });
     map.fitBounds(bounds);
+    marker.position = bounds.getCenter();
   });
   // [END region_getplaces]
 }
