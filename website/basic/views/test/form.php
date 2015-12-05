@@ -97,7 +97,7 @@ function updateMarkerAddress(str) {
 function initialize() {
   var latLng = new google.maps.LatLng(10.0, 25.0);
   var map = new google.maps.Map(document.getElementById('mapCanvas'), {
-    zoom: 8,
+    zoom: 4,
     center: latLng,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   });
@@ -129,3 +129,60 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+<<<<<<< HEAD
+<style>
+  #mapCanvas {
+    width: 500px;
+    height: 400px;
+    float: left;
+  }
+  #infoPanel {
+    float: left;
+    margin-left: 10px;
+  }
+  #infoPanel div {
+    margin-bottom: 5px;
+  }
+  </style>
+<div class="test-form">
+	
+	<div id="mapCanvas"></div>
+    <div id="infoPanel">
+    <b>Marker status:</b>
+    <div id="markerStatus"><i>Click and drag the marker.</i></div>
+    </div>
+    <div class="report-form">
+    <?php $form = ActiveForm::begin(); ?>
+
+        <?= $form->field($model, 'lat') ?>
+        <?= $form->field($model, 'long') ?>
+        <?= $form->field($model, 'requires_editing') ?>
+        <?= $form->field($model, 'is_solved') ?>
+        <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
+            'data' => $languages,
+            //'language' => 'de',
+            //'options' => ['placeholder' => 'Select a state ...'],
+            //'pluginOptions' => [
+            //   'allowClear' => true
+            //],
+        ]) ?>
+        <?= $form->field($model, 'age') ?>
+        <?= $form->field($model, 'problem_category') ?>
+        <?= $form->field($model, 'sms_id') ?>
+        <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
+            'data'=>$disabilities,
+        ]) ?>
+        <?= $form->field($model, 'location_prose') ?>
+        <?= $form->field($model, 'problem_prose') ?>
+        <?= $form->field($model, 'editor_comments') ?>
+        <?= $form->field($model, 'gender') ?>
+        <?= $form->field($model, 'name') ?>
+
+        <div class="form-group">
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+        </div>
+    <?php ActiveForm::end(); ?>
+
+</div><!-- test-form -->
+=======
+>>>>>>> 2b4fc05535ff4e4107c4bfa3fe994dc48b94af2e

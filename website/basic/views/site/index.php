@@ -5,8 +5,8 @@
 $this->title = 'Index';
 ?>
 <font color="white">
-<div style="background-color:#F0662F; overflow: auto; background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif); 
-	background-repeat: no-repeat; background-position: left bottom; background-size: 130px 130px;" class="site-index"> 
+<div style="background-color:#F0662F; overflow: hidden; background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif); 
+	background-repeat: no-repeat; padding:10px;background-position: left bottom; background-size: 130px 130px;" class="site-index"> 
 
     <div class="jumbotron">
         <h1>ADD International Access Tracker</h1>
@@ -37,7 +37,15 @@ $this->title = 'Index';
 		remote areas to report problems they face in their
 		daily lives via SMS message, allows local groups
 		to view and respond to problems, and allows ADD
-		International to view data on a global scale.</p>
+		International to view data on a global scale.
+		
+		
+		
+		
+		
+		
+		
+		</p>
 		</font>
             </div>
             <div class="col-lg-4">
