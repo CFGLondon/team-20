@@ -18,11 +18,11 @@ use yii\widgets\ActiveForm;
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
         <?= $form->field($model, 'time_updated') ?>
-        <?= $form->field($model, 'id_language') ?>
+        <?= $form->field($model, 'id_language')->dropDownList($languages)?>
         <?= $form->field($model, 'age') ?>
         <?= $form->field($model, 'problem_category') ?>
         <?= $form->field($model, 'sms_id') ?>
-        <?= $form->field($model, 'disability_category') ?>
+        <?= $form->field($model, 'disability_category')->dropDownList($disabilities) ?>
         <?= $form->field($model, 'location_prose') ?>
         <?= $form->field($model, 'problem_prose') ?>
         <?= $form->field($model, 'editor_comments') ?>

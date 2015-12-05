@@ -1,3 +1,7 @@
+<?php
+use yii\helpers\Url;
+?>
+
 <h1>ADD International: Disability Problem Reports</h1>
 <div id="googlemaps" style="height:500px;width:80%;">
 </div>
@@ -38,7 +42,9 @@
         animation: google.maps.Animation.DROP
       });
       marker<?=$report->idmain?>.addListener('click', function() {
+	console.log(<?=Url::to(['test/jsonrecord', ['id'=>20]]) ?>);
         //When clicked, fetch the relevant details
+        //object.gender
         
       });
     <?php } ?>
