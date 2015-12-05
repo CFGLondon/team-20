@@ -13,7 +13,7 @@
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
-	$sql = "INSERT INTO DisabilityCategory (category)
+	$sql = "INSERT INTO Report (category)
 	VALUES ('$parsed(0)')";
 	$conn->query($sql);
 	$conn->close();

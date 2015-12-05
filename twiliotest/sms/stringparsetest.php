@@ -1,12 +1,16 @@
 <?php
-	
-	echo "hello";
-	include 'stringparse.php';
-	$smsstring = "Singapore / deaf / no help at store / nicholas ";
-	$checkflag = checkparse($smsstring);
-	$result = parsetolist($smsstring);
-	echo gettype($result);
-	echo print_r($result);
+	$servername = "ec2-54-170-43-20.eu-west-1.compute.amazonaws.com";
+	$username = "root";
+	$password = "code4good";
+	$dbname = "add_db";
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	$sql = "INSERT INTO RawSMSData 
+	VALUES ('my message text','34555')";
+	$conn->query($sql);
+	$conn->close();
+
 
 
 ?>
