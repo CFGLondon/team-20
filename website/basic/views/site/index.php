@@ -4,7 +4,8 @@
 
 $this->title = 'Index';
 ?>
-<div class="site-index">
+<font color="white">
+<div style="background-color:#FF561F; overflow: auto;" class="site-index">
 
     <div class="jumbotron">
         <h1>ADD International Access Tracker</h1>
@@ -13,7 +14,7 @@ $this->title = 'Index';
 
     </div>
 
-    <div style="background-color:#FF561F; overflow: auto;" class="body-content">
+    <div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
@@ -42,4 +43,5 @@ $this->title = 'Index';
         </div>
 
     </div>
+    </font>
 </div>
