@@ -7,6 +7,7 @@ use app\models\Report;
 use app\models\Language;
 use app\models\DisabilityCategory;
 use app\models\ProblemCategory;
+use app\models\RawSMSData;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -180,11 +181,16 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
+       $last_sms_data = RawSMSData::find()->orderBy(['idRawSMSData' => SORT DESC])->one();
+       $last_phone_number = $last_sms_data->phone_number;
+       $last_text = $last_sms_data->msg_contents;
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
       'problems' => $problem_arr,
+      'last_phone_number' => $last_phone_number,
+      'last_text' => $last_text,
   	  ]);
 	}
 }
