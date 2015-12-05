@@ -93,6 +93,11 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
         <div id="form_get_lat_long">
         <div id="mapCanvas"></div>
+        <div id="infoPanel">
+        <b>Marker status:</b>
+        <div id="markerStatus"><i>Click and drag the marker.</i></div>
+        </div>
+        </br></br>
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
         </div>
