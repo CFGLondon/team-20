@@ -52,19 +52,14 @@ foreach($reports as $report) {
     $map->addOverlay(${$report->idmain});
 }
 
+$map->appendScript(
+"".
+"".
+""
+);
+
 // Display the map -finally :)
 echo $map->display();
-
-
-public function hideCatID($id){
-    foreach($reports as $report) {
-        if($report->problem_category == $id){
-            ${$report->idmain}->markerOptions = [
-		'visible' => false;
-            ];
-        }
-    }
-}
 
 ?>
 
