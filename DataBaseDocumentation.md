@@ -55,7 +55,7 @@ problem_prose:
 - Further details about problems stated in the report (Optional).
 
 id_language:
-- Foreign key into the Language table.
+- Foreign key into the Language table (Optional).
 
 time_sent:
 - Time stamp of when the report was sent.
@@ -73,7 +73,7 @@ editor_comments:
 - Any further details stated by the editor of a text (Optional).
 
 problem_category:
-- Foreign key into the ProblemCategory table.
+- Foreign key into the ProblemCategory table (Optional).
 
 is_solved:
 - Boolean that flags whether the problem stated in the report has been solved.
@@ -82,7 +82,10 @@ time_updated:
 - Time stamp of whenever a report has been updated.
 
 sms_id:
-- Foreign key into the RawSMSData table.
+- Foreign key into the RawSMSData table (Optional).
 
 disability_category:
-- Foreign key into the DisabilityCategory table.
+- Foreign key into the DisabilityCategory table (Optional).
+
+disability_prose:
+- Further details about disabilities stated in the report (Optional).
