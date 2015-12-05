@@ -114,8 +114,8 @@ class TestController extends Controller
             $model->time_updated = $date->format('Y-m-d H:i:s');
 		    if ($model->validate()) {
 			    $model->save();
-                echo "Success!";
-        	    return;
+                \Yii::$app->session->setFlash('updatedForm');
+                return $this->refresh();
 	        }
 	    }
       $languages = Language::find()->all();
@@ -183,8 +183,8 @@ class TestController extends Controller
             $model->time_updated = $date->format('Y-m-d H:i:s');
 		    if ($model->validate()) {
 			    $model->save();
-                echo "Success!";
-        	    return;
+                \Yii::$app->session->setFlash('submittedForm');
+                return $this->refresh();
 	        }
 	    }
 

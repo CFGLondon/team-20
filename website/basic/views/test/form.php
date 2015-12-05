@@ -7,6 +7,20 @@ use kartik\select2\Select2;
 /* @var $form ActiveForm */
 $this->title = "Form";
 ?>
+<?php if (Yii::$app->session->hasFlash('updatedForm')): ?>
+
+    <div class="alert alert-success">
+       The record was successfully updated!
+    </div>
+
+<?php elseif (Yii::$app->session->hasFlash('submittedForm')): ?>
+
+    <div class="alert alert-success">
+        The record was successfully created!
+    </div>
+
+<?php else: ?>
+
 <script type="text/javascript" src="http://maps.google.com/maps/api/js?libraries=places&sensor=false"></script>
 <script type="text/javascript">
 var geocoder = new google.maps.Geocoder();
@@ -181,3 +195,5 @@ google.maps.event.addDomListener(window, 'load', initialize);
   padding: 5px 11px 0px 11px;
 }
 </style>
+
+<?php endif: ?>
