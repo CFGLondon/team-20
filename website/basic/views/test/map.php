@@ -43,11 +43,11 @@ $problem_prose;
 
       map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423));
       
-      	<?php $form->field($model, 'books')->widget(CheckboxMultiple::className(), [
-    	'dataAttribute' => 'name',
+      	<?php $form->field($model, 'reports')->widget(CheckboxMultiple::className(), [
+    	'dataAttribute' => 'disability_category',
     	'scriptOptions' => [
         	'ajax' => [
-	            'url' => Url::toRoute(['books']),
+	            'url' => Url::toRoute(['reports']),
         	],
     	],
     	'placeholder' => Yii::t('app', 'Select ...'),
