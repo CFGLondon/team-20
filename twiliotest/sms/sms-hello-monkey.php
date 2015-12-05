@@ -25,7 +25,7 @@
 	}	
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	$sql = "INSERT INTO RawSMSData(`msg_contents`,`phone_number`) 
-	VALUES('$smsstring','$numberstring');"
+	VALUES('$smsstring','$numberstring');";
 	$conn->query($sql);
 	$last_id = $conn->insert_id;
 	$sql = "INSERT INTO Report(`sms_id`,`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`,`name`) 
