@@ -26,10 +26,6 @@ function geocodePosition(pos) {
   });
 }
 
-function updateMarkerStatus(str) {
-  document.getElementById('markerStatus').innerHTML = str;
-}
-
 function updateMarkerPosition(latLng) {
   document.getElementById('report-long').value =  latLng.lng();
   document.getElementById('report-lat').value =  latLng.lat();
@@ -58,17 +54,11 @@ function initialize() {
   geocodePosition(latLng);
 
   // Add dragging event listeners.
-  google.maps.event.addListener(marker, 'dragstart', function() {
-    updateMarkerAddress('Dragging...');
-  });
-
   google.maps.event.addListener(marker, 'drag', function() {
-    updateMarkerStatus('Dragging...');
     updateMarkerPosition(marker.getPosition());
   });
 
   google.maps.event.addListener(marker, 'dragend', function() {
-    updateMarkerStatus('Drag ended');
     geocodePosition(marker.getPosition());
   });
 }
