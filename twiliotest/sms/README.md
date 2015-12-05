@@ -1,5 +1,5 @@
 ##Documentation
-Please specify the smses sent to the server number in the following format:
+Please specify the smses sent to the server number, +441183241794  in the following format:
 Your location / Your disability / Your problem faced / Your name (optional)
 #smsin.php
 The meat of the program, does all the interfacing with the twilio API. Twilio API submits a query and it is parsed by this php code that calls all other subroutines.
