@@ -34,8 +34,8 @@
         draggable: false,
         animation: google.maps.Animation.DROP
       });
-    }
     <?php } ?>
+    }
     google.maps.event.addDomListener(window, 'load', initialize);
 
     //End google maps
