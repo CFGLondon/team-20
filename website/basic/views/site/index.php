@@ -6,7 +6,7 @@ $this->title = 'Index';
 ?>
 <font color="white">
 <div style="background-color:#F0662F; overflow: auto; background-image: url(http://www.add.org.uk/sites/default/files/add-logo-web%402x_0.gif); 
-	background-repeat: no-repeat; background-position: left bottom;" class="site-index"> 
+	background-repeat: no-repeat; background-position: left bottom; background-size: 60px 60px;" class="site-index"> 
 
     <div class="jumbotron">
         <h1>ADD International Access Tracker</h1>
@@ -38,11 +38,12 @@ $this->title = 'Index';
                 <p>Now people like Suos could report their daily 
                 encountered inequalities and get support/feedback 
                 promptly!</p>
-                <iframe width="450" height="253" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen>
+                <iframe width="400" height="225" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
         </div>
 
     </div>
-</font>
+
 </div>
+</font>
