@@ -53,6 +53,7 @@ class TestController extends Controller
         ]);
     }
 
+    //Code4good added stuff
     public function actionMap() {
     	$reports = Report::find()
     		->all();
@@ -60,6 +61,11 @@ class TestController extends Controller
     	return $this->render('map', [
     		'reports'=> $reports,
     	]);
+    }
+
+    public function actionJsonrecord($id) {
+       \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+       return Report::findOne($id);
     }
 
     /**
