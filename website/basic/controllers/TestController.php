@@ -62,7 +62,7 @@ class TestController extends Controller
         $searchquery = [];
         if($startTime != null) {
             echo "given start time is :". $startTime."<br />";
-        }    
+        }
 
     	$reports = Report::find([])->all();
     	//print_r($reports);
@@ -184,17 +184,11 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
-       $smses = RawSMSData::find()->all();
-       $phone_arr = [];
-       foreach($smses as $sms) {
-         $phone_arr[$sms->idRawSMSData] = $sms->phone_number;
-       }
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
       'problems' => $problem_arr,
-      'phones' => $phone_arr,
   	  ]);
 	}
 }
