@@ -18,8 +18,11 @@
 	$address=urlencode($parsed[0]);
     $loc = geocoder::getLocation($address);
     $numberstring = $_REQUEST['From'];
-    if (sizeof($parsed>3)){
+    if (sizeof($parsed)>3){
 		$nameout = $parsed[3];
+	}
+	else {
+		$nameout = 'NA';
 	}
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	$sql = "INSERT INTO RawSMSData(`msg_contents`,`phone_number`) 
