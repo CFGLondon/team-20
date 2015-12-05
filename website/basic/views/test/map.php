@@ -39,13 +39,5 @@
     google.maps.event.addDomListener(window, 'load', initialize);
 
     //End google maps
-/*
-<?php
 
-foreach($reports as $report) {
-?>
-    <div> Latitude: <?= $report->lat ?> Longitude: <?= $report->long ?> </div>
-<?php
-}
-?>*/
 </script>
