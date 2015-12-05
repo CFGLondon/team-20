@@ -54,7 +54,7 @@ class TestController extends Controller
     }
     
     public function actionMap() {
-    	$reports = Report::findAll();
+    	$reports = Report::findAll(null);
     	print_r($reports);
     	//return $this->render('map', [
     	//	'reports'=> $reports,
