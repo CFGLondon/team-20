@@ -15,7 +15,6 @@ use kartik\select2\Select2;
 
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
-        <?= $form->field($model, 'location_is_precise') ?>
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
         <?= $form->field($model, 'time_updated') ?>
