@@ -25,7 +25,7 @@ $map = new Map([
 ]);
  
 foreach($reports as $report) {
-    $coord->new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
+    $coord = new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
 
     // Lets add a marker now
     $marker = new Marker([
