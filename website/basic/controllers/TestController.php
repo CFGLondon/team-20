@@ -181,16 +181,21 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
-       $last_sms_data = RawSMSData::find()->orderBy(['idRawSMSData' => SORT_DESC])->one();
-       $last_phone_number = $last_sms_data->phone_number;
-       $last_text = $last_sms_data->msg_contents;
+       $invalid_sms_data = RawSMSData::find()->where('is_valid' => 0);
+       $phone_arr = [];
+       $msg_arr = []
+       for ($i = 1; $i <= count(invalid_sms_data); $i++){
+         $phone_arr[$i] = $invalid_sms_data[$i]->phone_number;
+         $msg_arr[$i] = $invalid_sms_data[$i]->msg_contents;
+       }
+
 	    return $this->render('form', [
    	  'model' => $model,
       'languages' => $language_arr,
       'disabilities' => $disability_arr,
       'problems' => $problem_arr,
-      'last_phone_number' => $last_phone_number,
-      'last_text' => $last_text,
+      'phone_numbers' => $phone_arr,
+      'messages' => $msg_arr,
   	  ]);
 	}
 }
