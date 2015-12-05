@@ -38,11 +38,11 @@ function updateMarkerAddress(str) {
 
 function initialize() {
   var latLng = new google.maps.LatLng(10.0, 25.0);
-  var map = new google.maps.Map(document.getElementById('mapCanvas'), {
-    zoom: 4,
+  var map = new google.maps.Map(document.getElementById('map'), {
     center: latLng,
+    zoom: 3,
     mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
+  })
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
