@@ -24,9 +24,9 @@ $this->title = 'Index';
                <p>ADD International fights for independence, equality 
                and opportunity for disabled people, with a close focus 
                in Africa and Asia. We work towards the same goals as 
-               <a href="https://sustainabledevelopment.un.org/?menu=1300" style="color: #6FB4F7">
+               <a href="https://sustainabledevelopment.un.org/?menu=1300" style="color: #2fb9f0">
                	UN Sustainable Development Goals</a>. For more information, 
-               	please <a href="http://www.add.org.uk" style="color: #6FB4F7">visit our official website</a>. </p>
+               	please <a href="http://www.add.org.uk" style="color: #2fb9f0">visit our official website</a>. </p>
                 
             </div>
             <div style="background-color:#FFFFFF; overflow: auto;" class="col-lg-4">
