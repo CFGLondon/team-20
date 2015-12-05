@@ -181,12 +181,12 @@ class TestController extends Controller
          $problem_arr[$problem->id_problem_category] = $problem->category;
        }
 
-       $invalid_sms_data = RawSMSData::find()->where(['is_valid' => 0]);
+       $invalid_smses = RawSMSData::find()->all();
        $phone_arr = [];
-       $msg_arr = []
-       for ($i = 1; $i <= count($invalid_sms_data); $i++){
-         $phone_arr[$i] = $invalid_sms_data[$i]->phone_number;
-         $msg_arr[$i] = $invalid_sms_data[$i]->msg_contents;
+       $msg_arr = [];
+       foreach ($invalid_smses as $invalid_sms) {
+         $phone_arr[$invalid_sms->idRawSMSData] = $invalid_sms->phone_number;
+         $msg_arr[$invalid_sms->idRawSMSData] = $invalid_sms->msg_contents;
        }
 
 	    return $this->render('form', [
