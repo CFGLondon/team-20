@@ -3,68 +3,57 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Map Display';
+
+//"Url::to(['test/jsonrecord', 'id'=>20])"
+
+use dosamigos\google\maps\LatLng;
+use dosamigos\google\maps\services\DirectionsWayPoint;
+use dosamigos\google\maps\services\TravelMode;
+use dosamigos\google\maps\overlays\PolylineOptions;
+use dosamigos\google\maps\services\DirectionsRenderer;
+use dosamigos\google\maps\services\DirectionsService;
+use dosamigos\google\maps\overlays\InfoWindow;
+use dosamigos\google\maps\overlays\Marker;
+use dosamigos\google\maps\Map;
+use dosamigos\google\maps\services\DirectionsRequest;
+use dosamigos\google\maps\overlays\Polygon;
+use dosamigos\google\maps\layers\BicyclingLayer;
+
+$map = new Map([
+    'center' => new LatLng(['lat' => 39.720089311812094, 'lng' => 2.91165944519042]),
+    'zoom' => 1,
+]);
+
+$map->containerOptions = [
+    "id" => "main_map",
+    "style" => "width:100%; height:500px;padding:20px;"
+];
+$map->width = "100%";
+$map->height = "500px";
+ 
+foreach($reports as $report) {
+    $coord = new LatLng(['lat' => $report->lat, 'lng' => $report->long]);
+
+    // Lets add a marker now
+    $marker = new Marker([
+        'position' => $coord,
+        //'title' => 'My Home Town',
+    ]);
+     
+    // Provide a shared InfoWindow to the marker
+    $marker->attachInfoWindow(
+        new InfoWindow([
+            'content' => '<p>'.$report->problem_prose.'</p>'
+        ])
+    );
+     
+    // Add marker to the map
+    $map->addOverlay($marker);
+}
+
+// Display the map -finally :)
+echo $map->display();
+
 ?>
-
-<?php
-use yii\helpers\Url;
-
-$problem_prose;
-?>
-
-<h1>ADD International: Disability Problem Reports</h1>
-<div id="googlemaps" style="height:500px;width:80%;">
-</div>
-<div id="problemdetails">
-<p>Problem Details: </p>
-<p>Problem Category: </p>
-<p>Disability Category: </p>
-</div>
-
-
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-<script>
-    //Google maps code
-
-    function initialize() {
-
-      var myOptions = {
-        zoom: 4,
-        zoomControl: true,
-        scaleControl: true,
-        scrollwheel: true,
-        disableDoubleClickZoom: false,
-        streetViewControl: false,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-      };
-
-      map = new google.maps.Map(document.getElementById('googlemaps'),
-            myOptions);
-
-      map.setCenter(new google.maps.LatLng(52.1999722, 0.1247423));
-      
-
-      <?php foreach($reports as $report) { ?>
-          position<?=$report->idmain?> = new google.maps.LatLng(
-              <?=$report-> lat ?> ,
-              <?=$report-> long?> );
-      marker<?=$report->idmain?> = new google.maps.Marker({
-        position: position<?=$report->idmain?>,
-        map: map,
-        draggable: false,
-        animation: google.maps.Animation.DROP
-      });
-      marker<?=$report->idmain?>.addListener('click', function() {
-	$.getJSON("<?=Url::to(['test/jsonrecord', 'id'=>20]) ?>", function( data ) {
-            console.log(data.location_prose);
-        });
-        //When clicked, fetch the relevant details
-        
-      });
-    <?php } ?>
-    }
-    google.maps.event.addDomListener(window, 'load', initialize);
-
-    //End google maps
-</script>
 
 

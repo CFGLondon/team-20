@@ -9,12 +9,32 @@ use kartik\select2\Select2;
 /* @var $model app\models\Report */
 /* @var $form ActiveForm */
 ?>
+<style>
+#mapCanvas {
+    width: 100%;
+    height: 400px;
+}
+#infoPanel {
+    float: left;
+    margin-left: 10px;
+}
+#infoPanel div {
+    margin-bottom: 5px;
+}
+</style>
 <div class="test-form">
-
+	<div class="report-form">
     <?php $form = ActiveForm::begin(); ?>
 
+        <div id="form_get_lat_long">
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript">
+        var geocoder = new google.maps.Geocoder();
+        </script>
+        <div id="mapCanvas"></div>
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
+        </div>
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
         <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
@@ -44,3 +64,66 @@ use kartik\select2\Select2;
     <?php ActiveForm::end(); ?>
 
 </div><!-- test-form -->
+
+<script>
+function geocodePosition(pos) {
+  geocoder.geocode({
+    latLng: pos
+  }, function(responses) {
+    if (responses && responses.length > 0) {
+      updateMarkerAddress(responses[0].formatted_address);
+    } else {
+      updateMarkerAddress('Cannot determine address at this location.');
+    }
+  });
+}
+
+function updateMarkerStatus(str) {
+  document.getElementById('markerStatus').innerHTML = str;
+}
+
+function updateMarkerPosition(latLng) {
+  document.getElementById('report-long').value =  latLng.lng();
+  document.getElementById('report-lat').value =  latLng.lat();
+}
+
+function updateMarkerAddress(str) {
+  document.getElementById('report-location_prose').value = str;
+}
+
+function initialize() {
+  var latLng = new google.maps.LatLng(10.0, 25.0);
+  var map = new google.maps.Map(document.getElementById('mapCanvas'), {
+    zoom: 4,
+    center: latLng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+  var marker = new google.maps.Marker({
+    position: latLng,
+    title: 'Point A',
+    map: map,
+    draggable: true
+  });
+  
+  // Update current position info.
+  updateMarkerPosition(latLng);
+  geocodePosition(latLng);
+  
+  // Add dragging event listeners.
+  google.maps.event.addListener(marker, 'dragstart', function() {
+    updateMarkerAddress('Dragging...');
+  });
+  
+  google.maps.event.addListener(marker, 'drag', function() {
+    updateMarkerStatus('Dragging...');
+    updateMarkerPosition(marker.getPosition());
+  });
+  
+  google.maps.event.addListener(marker, 'dragend', function() {
+    updateMarkerStatus('Drag ended');
+    geocodePosition(marker.getPosition());
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
