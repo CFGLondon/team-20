@@ -15,7 +15,7 @@
 	$checkflag = checkparse($smsstring);
 	$parsed = parsetolist($smsstring);
 	try {
-    $nameout = $parsed[3];
+		$nameout = $parsed[3];
 	} catch (Exception $e) {
 		$nameout = 'N.A.';
 	}	
