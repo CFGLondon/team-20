@@ -25,18 +25,13 @@ use kartik\select2\Select2;
 </style>
 <div class="test-form">
 	<div class="report-form">
-	<div id="mapCanvas"></div>
-    <div id="infoPanel">
-    <b>Marker status:</b>
-    <div id="markerStatus"><i>Click and drag the marker.</i></div>
-    </div>
-    </br></br>
     <?php $form = ActiveForm::begin(); ?>
 
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript">
         var geocoder = new google.maps.Geocoder();
         </script>
+        <div id="mapCanvas"></div>
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
         <?= $form->field($model, 'requires_editing') ?>
