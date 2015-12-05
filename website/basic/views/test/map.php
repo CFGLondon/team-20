@@ -38,7 +38,7 @@ foreach($reports as $report) {
         'position' => $coord,
         //'title' => 'My Home Town',
         //'visible' => false,
-        
+        'category' => $report->problem_category  
     ]);
      
     // Provide a shared InfoWindow to the marker
@@ -52,19 +52,14 @@ foreach($reports as $report) {
     $map->addOverlay(${$report->idmain});
 }
 
+$map->appendScript(
+"".
+"".
+""
+);
+
 // Display the map -finally :)
 echo $map->display();
-
-
-public function hideCatID($id){
-    foreach($reports as $report) {
-        if($report->problem_category == $id){
-            ${$report->idmain}->markerOptions = [
-		'visible' => false;
-            ];
-        }
-    }
-}
 
 ?>
 
