@@ -6,7 +6,7 @@
 	$checkflag = checkparse($smsstring);
 	$result = parsetolist($smsstring);
 	echo gettype($result);
-	echo $result;
+	echo print_r($result);
 
 
 ?>
