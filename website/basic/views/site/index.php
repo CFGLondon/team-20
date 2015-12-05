@@ -31,7 +31,8 @@ $this->title = 'Index';
 
             </div>
             <div class="col-lg-4">
-                
+                <h3>A solution to them</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
 
