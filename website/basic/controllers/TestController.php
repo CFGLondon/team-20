@@ -143,7 +143,8 @@ class TestController extends Controller
 
 	    if ($model->load(Yii::$app->request->post())) {
             $model->location_is_precise = true;
-            $model->time_sent = DateTime::getTimestamp();
+            $date = new DateTime();
+            $model->time_sent = $date->getTimestamp();
 		    if ($model->validate()) {
 			    $model->save();
         	    return;
