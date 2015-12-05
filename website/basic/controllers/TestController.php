@@ -64,7 +64,8 @@ class TestController extends Controller
     }
 
     public function actionJsonrecord($id) {
-       return json_encode(Report::findOne($id));
+       \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+       return Report::findOne($id);
     }
 
     /**
