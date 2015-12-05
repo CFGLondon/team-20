@@ -17,14 +17,19 @@
 	$parsed = parsetolist($smsstring);
 	$address=urlencode($parsed[0]);
     $loc = geocoder::getLocation($address);
+    $numberstring = $_REQUEST['From'];
 	try {
 		$nameout = $parsed[3];
 	} catch (Exception $e) {
 		$nameout = 'N.A.';
 	}	
 	$conn = new mysqli($servername, $username, $password, $dbname);
-	$sql = "INSERT INTO Report(`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`,`name`) 
-	VALUES('$parsed[1]','$parsed[0]','$parsed[2]',$loc[lat],$loc[lng],0,NOW(),$checkflag,0,NOW(),1,'$nameout');";
+	$sql = "INSERT INTO RawSMSData(`msg_contents`,`phone_number`) 
+	VALUES('$smsstring','$numberstring');"
+	$conn->query($sql);
+	$last_id = $conn->insert_id;
+	$sql = "INSERT INTO Report(`sms_id`,`disability_prose`,`location_prose`,`problem_prose`,`lat`,`long`,`location_is_precise`,`time_sent`,`requires_editing`,`is_solved`,`time_updated`,`sms_id`,`name`) 
+	VALUES($last_id,'$parsed[1]','$parsed[0]','$parsed[2]',$loc[lat],$loc[lng],0,NOW(),$checkflag,0,NOW(),1,'$nameout');";
 	$conn->query($sql);
 	$conn->close();
 ?>
