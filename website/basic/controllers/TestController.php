@@ -64,7 +64,7 @@ class TestController extends Controller
     }
 
     public function actionJsonrecord($id) {
-       return Report::findOne($id);
+       return json_encode(Report::findOne($id));
     }
 
     /**
