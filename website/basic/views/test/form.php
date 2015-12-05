@@ -9,62 +9,10 @@ use kartik\select2\Select2;
 /* @var $model app\models\Report */
 /* @var $form ActiveForm */
 ?>
-<style>
-#mapCanvas {
-    width: 100%;
-    height: 400px;
-}
-#infoPanel {
-    float: left;
-    margin-left: 10px;
-}
-#infoPanel div {
-    margin-bottom: 5px;
-}
-</style>
-<div class="test-form">
-	<div class="report-form">
-    <?php $form = ActiveForm::begin(); ?>
-
-        <div id="form_get_lat_long">
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript">
-        var geocoder = new google.maps.Geocoder();
-        </script>
-        <div id="mapCanvas"></div>
-        <?= $form->field($model, 'lat') ?>
-        <?= $form->field($model, 'long') ?>
-        </div>
-        <?= $form->field($model, 'requires_editing') ?>
-        <?= $form->field($model, 'is_solved') ?>
-        <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
-            'data' => $languages,
-            //'language' => 'de',
-            //'options' => ['placeholder' => 'Select a state ...'],
-            //'pluginOptions' => [
-            //   'allowClear' => true
-            //],
-        ]) ?>
-        <?= $form->field($model, 'age') ?>
-        <?= $form->field($model, 'problem_category') ?>
-        <?= $form->field($model, 'sms_id') ?>
-        <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
-            'data'=>$disabilities,
-        ]) ?>
-        <?= $form->field($disability_category, 'category') ?>
-        <?= $form->field($model, 'location_prose') ?>
-        <?= $form->field($model, 'problem_prose') ?>
-        <?= $form->field($model, 'editor_comments') ?>
-        <?= $form->field($model, 'gender') ?>
-        <?= $form->field($model, 'name') ?>
-
-        <div class="form-group">
-            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
-        </div>
-    <?php ActiveForm::end(); ?>
-
-</div><!-- test-form -->
-
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+var geocoder = new google.maps.Geocoder();
+</script>
 <script>
 function geocodePosition(pos) {
   geocoder.geocode({
@@ -104,21 +52,21 @@ function initialize() {
     map: map,
     draggable: true
   });
-  
+
   // Update current position info.
   updateMarkerPosition(latLng);
   geocodePosition(latLng);
-  
+
   // Add dragging event listeners.
   google.maps.event.addListener(marker, 'dragstart', function() {
     updateMarkerAddress('Dragging...');
   });
-  
+
   google.maps.event.addListener(marker, 'drag', function() {
     updateMarkerStatus('Dragging...');
     updateMarkerPosition(marker.getPosition());
   });
-  
+
   google.maps.event.addListener(marker, 'dragend', function() {
     updateMarkerStatus('Drag ended');
     geocodePosition(marker.getPosition());
@@ -126,4 +74,59 @@ function initialize() {
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
+<style>
+#mapCanvas {
+    width: 100%;
+    height: 400px;
+}
+#infoPanel {
+    float: left;
+    margin-left: 10px;
+}
+#infoPanel div {
+    margin-bottom: 5px;
+}
+</style>
+<div class="test-form">
+	<div class="report-form">
+    <?php $form = ActiveForm::begin(); ?>
 
+        <div id="form_get_lat_long">
+        <div id="mapCanvas"></div>
+        <div id="infoPanel">
+        <b>Marker status:</b>
+        <div id="markerStatus"><i>Click and drag the marker.</i></div>
+        </div>
+        </br></br>
+        <?= $form->field($model, 'lat') ?>
+        <?= $form->field($model, 'long') ?>
+        </div>
+        <?= $form->field($model, 'requires_editing') ?>
+        <?= $form->field($model, 'is_solved') ?>
+        <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
+            'data' => $languages,
+            //'language' => 'de',
+            //'options' => ['placeholder' => 'Select a state ...'],
+            //'pluginOptions' => [
+            //   'allowClear' => true
+            //],
+        ]) ?>
+        <?= $form->field($model, 'age') ?>
+        <?= $form->field($model, 'problem_category') ?>
+        <?= $form->field($model, 'sms_id') ?>
+        <?= $form->field($model, 'disability_category')->widget(Select2::classname(), [
+            'data'=>$disabilities,
+        ]) ?>
+        <?= $form->field($disability_category, 'category') ?>
+        <?= $form->field($model, 'location_prose') ?>
+        <?= $form->field($model, 'problem_prose') ?>
+        <?= $form->field($model, 'editor_comments') ?>
+        <?= $form->field($model, 'gender') ?>
+        <?= $form->field($model, 'name') ?>
+
+        <div class="form-group">
+            <?= Html::submitButton('Submit', ['class' => 'btn btn-primary']) ?>
+        </div>
+    <?php ActiveForm::end(); ?>
+
+</div><!-- test-form -->
