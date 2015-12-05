@@ -13,6 +13,12 @@ Team Members:
 - Nicholas
 - Sathya
 
+Methods
+-> Twilio - SMS
+-> ? SMPP - SMS / USSD
+-> HTML - local co-ordinator form : IE6 support, android support
+
+
 ##Data Storage
 
 * Tables
