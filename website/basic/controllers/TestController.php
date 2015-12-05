@@ -109,15 +109,40 @@ class TestController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+	    if ($model->load(Yii::$app->request->post())) {
+            $date = new DateTime();
+            $model->time_updated = $date->format('Y-m-d H:i:s');
+		    if ($model->validate()) {
+			    $model->save();
+                echo "Success!";
+        	    return;
+	        }
+	    }
+      $languages = Language::find()->all();
+      $language_arr = [];
+      foreach($languages as $language) {
+        $language_arr[$language->id_language] = $language->name." (".$language->dialect.")";
+       }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idmain]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
-    }
+       $disabilities = DisabilityCategory::find()->all();
+       $disability_arr = [];
+       foreach($disabilities as $disability) {
+         $disability_arr[$disability->id_disability_category] = $disability->category;
+       }
+
+       $problems = ProblemCategory::find()->all();
+       $problem_arr = [];
+       foreach($problems as $problem) {
+         $problem_arr[$problem->id_problem_category] = $problem->category;
+       }
+
+	  return $this->render('form', [
+       	  'model' => $model,
+          'languages' => $language_arr,
+          'disabilities' => $disability_arr,
+          'problems' => $problem_arr,
+  	  ]);
+	}
 
     /**
      * Deletes an existing Report model.
