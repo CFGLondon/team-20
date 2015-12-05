@@ -2,7 +2,7 @@
 	
 	echo "hello";
 	include 'stringparse.php';
-	$smsstring = "Singapore / deaf / no help at store / nicholas //";
+	$smsstring = "Singapore / deaf / no help at store / nicholas ";
 	$checkflag = checkparse($smsstring);
 	echo $checkflag;
 
