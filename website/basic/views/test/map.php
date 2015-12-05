@@ -7,7 +7,7 @@ $this->title = 'Map Display';
 
 <?php
 use yii\helpers\Url;
-use diiimonn\yii2-widget-checkbox-multiple\CheckboxMultiple;
+use diiimonn\yii2_widget_checkbox_multiple\CheckboxMultiple;
 $problem_prose;
 ?>
 
