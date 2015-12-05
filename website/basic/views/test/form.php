@@ -120,6 +120,7 @@ function initialize() {
     });
     map.fitBounds(bounds);
     marker.setPosition(bounds.getCenter());
+    updateMarkerPosition(marker.getPosition());
   });
   // [END region_getplaces]
 }
