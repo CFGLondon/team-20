@@ -30,12 +30,12 @@ function updateMarkerStatus(str) {
 }
 
 function updateMarkerPosition(latLng) {
-  document.getElementById('report-long').innerHTML =  latLng.lng();
-  document.getElementById('report-lat').innerHTML =  latLng.lat();
+  document.getElementById('report-long').value =  latLng.lng();
+  document.getElementById('report-lat').value =  latLng.lat();
 }
 
 function updateMarkerAddress(str) {
-  document.getElementById('report-location_prose').innerHTML = str;
+  document.getElementById('report-location_prose').value = str;
 }
 
 function initialize() {
