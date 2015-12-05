@@ -38,7 +38,7 @@ $this->title = 'Index';
                 <p>Now people like Suos could report their daily 
                 encountered inequalities and get support/feedback 
                 promptly!</p>
-                <iframe width="400" height="225" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen>
+                <iframe width="338" height="190" src="https://www.youtube.com/embed/bj_hAFEitac" frameborder="0" allowfullscreen>
                 </iframe>
             </div>
         </div>
