@@ -71,6 +71,7 @@ function initialize() {
     geocodePosition(marker.getPosition());
   });
 }
+</script>
 <div class="test-form">
 	<div class="report-form">
 	<div id="mapCanvas">
