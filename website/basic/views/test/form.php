@@ -13,7 +13,6 @@ use kartik\select2\Select2;
 #mapCanvas {
     width: 500px;
     height: 400px;
-    float: left;
 }
 #infoPanel {
     float: left;
@@ -27,6 +26,7 @@ use kartik\select2\Select2;
 	<div class="report-form">
     <?php $form = ActiveForm::begin(); ?>
 
+        <div id="form_get_lat_long">
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript">
         var geocoder = new google.maps.Geocoder();
@@ -34,6 +34,7 @@ use kartik\select2\Select2;
         <div id="mapCanvas"></div>
         <?= $form->field($model, 'lat') ?>
         <?= $form->field($model, 'long') ?>
+        </div>
         <?= $form->field($model, 'requires_editing') ?>
         <?= $form->field($model, 'is_solved') ?>
         <?= $form->field($model, 'id_language')->widget(Select2::classname(), [
