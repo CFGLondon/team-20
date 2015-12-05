@@ -72,6 +72,20 @@ function initialize() {
   });
 }
 </script>
+<style>
+  #mapCanvas {
+    width: 500px;
+    height: 400px;
+    float: left;
+  }
+  #infoPanel {
+    float: left;
+    margin-left: 10px;
+  }
+  #infoPanel div {
+    margin-bottom: 5px;
+  }
+  </style>
 <div class="test-form">
 	<div class="report-form">
 	<div id="mapCanvas"></div>
